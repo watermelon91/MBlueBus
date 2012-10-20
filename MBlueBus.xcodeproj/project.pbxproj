@@ -1,0 +1,322 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A722973216192FDA007AA7A3 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A722973116192FDA007AA7A3 /* CoreLocation.framework */; };
+		A722973516193021007AA7A3 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A722973416193021007AA7A3 /* MapKit.framework */; };
+		A7229738161934F6007AA7A3 /* MBusDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = A7229737161934F6007AA7A3 /* MBusDataSource.m */; };
+		A727AF9C16100F9B002B3A91 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A727AF9B16100F9B002B3A91 /* UIKit.framework */; };
+		A727AF9E16100F9B002B3A91 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A727AF9D16100F9B002B3A91 /* Foundation.framework */; };
+		A727AFA016100F9B002B3A91 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A727AF9F16100F9B002B3A91 /* CoreGraphics.framework */; };
+		A727AFA616100F9B002B3A91 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A727AFA416100F9B002B3A91 /* InfoPlist.strings */; };
+		A727AFA816100F9B002B3A91 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A727AFA716100F9B002B3A91 /* main.m */; };
+		A727AFAC16100F9B002B3A91 /* MBusAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A727AFAB16100F9B002B3A91 /* MBusAppDelegate.m */; };
+		A727AFAF16100F9B002B3A91 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A727AFAD16100F9B002B3A91 /* MainStoryboard.storyboard */; };
+		A727AFB216100F9B002B3A91 /* MBusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A727AFB116100F9B002B3A91 /* MBusViewController.m */; };
+		A7C2E0C216309D5D006413B7 /* StopInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A7C2E0C116309D5D006413B7 /* StopInfo.m */; };
+		A7C2E0C516309EEB006413B7 /* RouteInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A7C2E0C416309EEB006413B7 /* RouteInfo.m */; };
+		A7C2E0C81630A8CE006413B7 /* XMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = A7C2E0C71630A8CE006413B7 /* XMLParser.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A722973116192FDA007AA7A3 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		A722973416193021007AA7A3 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		A7229736161934F6007AA7A3 /* MBusDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBusDataSource.h; sourceTree = "<group>"; };
+		A7229737161934F6007AA7A3 /* MBusDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBusDataSource.m; sourceTree = "<group>"; };
+		A727AF9716100F9B002B3A91 /* MBlueBus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MBlueBus.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A727AF9B16100F9B002B3A91 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		A727AF9D16100F9B002B3A91 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		A727AF9F16100F9B002B3A91 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		A727AFA316100F9B002B3A91 /* MBlueBus-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MBlueBus-Info.plist"; sourceTree = "<group>"; };
+		A727AFA516100F9B002B3A91 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A727AFA716100F9B002B3A91 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A727AFA916100F9B002B3A91 /* MBlueBus-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MBlueBus-Prefix.pch"; sourceTree = "<group>"; };
+		A727AFAA16100F9B002B3A91 /* MBusAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBusAppDelegate.h; sourceTree = "<group>"; };
+		A727AFAB16100F9B002B3A91 /* MBusAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBusAppDelegate.m; sourceTree = "<group>"; };
+		A727AFAE16100F9B002B3A91 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		A727AFB016100F9B002B3A91 /* MBusViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBusViewController.h; sourceTree = "<group>"; };
+		A727AFB116100F9B002B3A91 /* MBusViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBusViewController.m; sourceTree = "<group>"; };
+		A7C2E0C016309D5D006413B7 /* StopInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StopInfo.h; sourceTree = "<group>"; };
+		A7C2E0C116309D5D006413B7 /* StopInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StopInfo.m; sourceTree = "<group>"; };
+		A7C2E0C316309EEB006413B7 /* RouteInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteInfo.h; sourceTree = "<group>"; };
+		A7C2E0C416309EEB006413B7 /* RouteInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteInfo.m; sourceTree = "<group>"; };
+		A7C2E0C61630A8CE006413B7 /* XMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLParser.h; sourceTree = "<group>"; };
+		A7C2E0C71630A8CE006413B7 /* XMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLParser.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A727AF9416100F9B002B3A91 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A722973516193021007AA7A3 /* MapKit.framework in Frameworks */,
+				A722973216192FDA007AA7A3 /* CoreLocation.framework in Frameworks */,
+				A727AF9C16100F9B002B3A91 /* UIKit.framework in Frameworks */,
+				A727AF9E16100F9B002B3A91 /* Foundation.framework in Frameworks */,
+				A727AFA016100F9B002B3A91 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A727AF8C16100F9B002B3A91 = {
+			isa = PBXGroup;
+			children = (
+				A722973416193021007AA7A3 /* MapKit.framework */,
+				A727AFA116100F9B002B3A91 /* MBlueBus */,
+				A727AF9A16100F9B002B3A91 /* Frameworks */,
+				A727AF9816100F9B002B3A91 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A727AF9816100F9B002B3A91 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A727AF9716100F9B002B3A91 /* MBlueBus.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A727AF9A16100F9B002B3A91 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A722973116192FDA007AA7A3 /* CoreLocation.framework */,
+				A727AF9B16100F9B002B3A91 /* UIKit.framework */,
+				A727AF9D16100F9B002B3A91 /* Foundation.framework */,
+				A727AF9F16100F9B002B3A91 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A727AFA116100F9B002B3A91 /* MBlueBus */ = {
+			isa = PBXGroup;
+			children = (
+				A727AFAA16100F9B002B3A91 /* MBusAppDelegate.h */,
+				A727AFAB16100F9B002B3A91 /* MBusAppDelegate.m */,
+				A727AFAD16100F9B002B3A91 /* MainStoryboard.storyboard */,
+				A7C2E0C016309D5D006413B7 /* StopInfo.h */,
+				A7C2E0C116309D5D006413B7 /* StopInfo.m */,
+				A7C2E0C316309EEB006413B7 /* RouteInfo.h */,
+				A7C2E0C416309EEB006413B7 /* RouteInfo.m */,
+				A7C2E0C61630A8CE006413B7 /* XMLParser.h */,
+				A7C2E0C71630A8CE006413B7 /* XMLParser.m */,
+				A7229736161934F6007AA7A3 /* MBusDataSource.h */,
+				A7229737161934F6007AA7A3 /* MBusDataSource.m */,
+				A727AFB016100F9B002B3A91 /* MBusViewController.h */,
+				A727AFB116100F9B002B3A91 /* MBusViewController.m */,
+				A727AFA216100F9B002B3A91 /* Supporting Files */,
+			);
+			path = MBlueBus;
+			sourceTree = "<group>";
+		};
+		A727AFA216100F9B002B3A91 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A727AFA316100F9B002B3A91 /* MBlueBus-Info.plist */,
+				A727AFA416100F9B002B3A91 /* InfoPlist.strings */,
+				A727AFA716100F9B002B3A91 /* main.m */,
+				A727AFA916100F9B002B3A91 /* MBlueBus-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A727AF9616100F9B002B3A91 /* MBlueBus */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A727AFB516100F9B002B3A91 /* Build configuration list for PBXNativeTarget "MBlueBus" */;
+			buildPhases = (
+				A727AF9316100F9B002B3A91 /* Sources */,
+				A727AF9416100F9B002B3A91 /* Frameworks */,
+				A727AF9516100F9B002B3A91 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MBlueBus;
+			productName = MBlueBus;
+			productReference = A727AF9716100F9B002B3A91 /* MBlueBus.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A727AF8E16100F9B002B3A91 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = MBus;
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = "Yijia Tang";
+			};
+			buildConfigurationList = A727AF9116100F9B002B3A91 /* Build configuration list for PBXProject "MBlueBus" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = A727AF8C16100F9B002B3A91;
+			productRefGroup = A727AF9816100F9B002B3A91 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A727AF9616100F9B002B3A91 /* MBlueBus */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A727AF9516100F9B002B3A91 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A727AFA616100F9B002B3A91 /* InfoPlist.strings in Resources */,
+				A727AFAF16100F9B002B3A91 /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A727AF9316100F9B002B3A91 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A727AFA816100F9B002B3A91 /* main.m in Sources */,
+				A727AFAC16100F9B002B3A91 /* MBusAppDelegate.m in Sources */,
+				A727AFB216100F9B002B3A91 /* MBusViewController.m in Sources */,
+				A7229738161934F6007AA7A3 /* MBusDataSource.m in Sources */,
+				A7C2E0C216309D5D006413B7 /* StopInfo.m in Sources */,
+				A7C2E0C516309EEB006413B7 /* RouteInfo.m in Sources */,
+				A7C2E0C81630A8CE006413B7 /* XMLParser.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A727AFA416100F9B002B3A91 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A727AFA516100F9B002B3A91 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		A727AFAD16100F9B002B3A91 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A727AFAE16100F9B002B3A91 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A727AFB316100F9B002B3A91 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		A727AFB416100F9B002B3A91 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A727AFB616100F9B002B3A91 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MBlueBus/MBlueBus-Prefix.pch";
+				INFOPLIST_FILE = "MBlueBus/MBlueBus-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		A727AFB716100F9B002B3A91 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MBlueBus/MBlueBus-Prefix.pch";
+				INFOPLIST_FILE = "MBlueBus/MBlueBus-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A727AF9116100F9B002B3A91 /* Build configuration list for PBXProject "MBlueBus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A727AFB316100F9B002B3A91 /* Debug */,
+				A727AFB416100F9B002B3A91 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A727AFB516100F9B002B3A91 /* Build configuration list for PBXNativeTarget "MBlueBus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A727AFB616100F9B002B3A91 /* Debug */,
+				A727AFB716100F9B002B3A91 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A727AF8E16100F9B002B3A91 /* Project object */;
+}
