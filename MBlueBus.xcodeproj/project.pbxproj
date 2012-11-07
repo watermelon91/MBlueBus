@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		A722973216192FDA007AA7A3 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A722973116192FDA007AA7A3 /* CoreLocation.framework */; };
 		A722973516193021007AA7A3 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A722973416193021007AA7A3 /* MapKit.framework */; };
-		A7229738161934F6007AA7A3 /* MBusDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = A7229737161934F6007AA7A3 /* MBusDataSource.m */; };
 		A727AF9C16100F9B002B3A91 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A727AF9B16100F9B002B3A91 /* UIKit.framework */; };
 		A727AF9E16100F9B002B3A91 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A727AF9D16100F9B002B3A91 /* Foundation.framework */; };
 		A727AFA016100F9B002B3A91 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A727AF9F16100F9B002B3A91 /* CoreGraphics.framework */; };
@@ -20,16 +19,17 @@
 		A727AFB216100F9B002B3A91 /* MBusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A727AFB116100F9B002B3A91 /* MBusViewController.m */; };
 		A7C2E0C216309D5D006413B7 /* StopInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A7C2E0C116309D5D006413B7 /* StopInfo.m */; };
 		A7C2E0C516309EEB006413B7 /* RouteInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A7C2E0C416309EEB006413B7 /* RouteInfo.m */; };
-		A7C2E0C81630A8CE006413B7 /* XMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = A7C2E0C71630A8CE006413B7 /* XMLParser.m */; };
+		A7C2E0C81630A8CE006413B7 /* XMLRouteParser.m in Sources */ = {isa = PBXBuildFile; fileRef = A7C2E0C71630A8CE006413B7 /* XMLRouteParser.m */; };
 		A7C2E11C1634AA78006413B7 /* ArrivalInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A7C2E11B1634AA78006413B7 /* ArrivalInfo.m */; };
 		A7E9C026164A0340008A8760 /* BusLocationCoordinateInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A7E9C025164A0340008A8760 /* BusLocationCoordinateInfo.m */; };
+		A7E9C03B164A132C008A8760 /* XMLBusLocParser.m in Sources */ = {isa = PBXBuildFile; fileRef = A7E9C03A164A132C008A8760 /* XMLBusLocParser.m */; };
+		A7E9C046164B07ED008A8760 /* LocDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = A7E9C045164B07ED008A8760 /* LocDataSource.m */; };
+		A7E9C04A164B084D008A8760 /* RouteDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = A7E9C049164B084D008A8760 /* RouteDataSource.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A722973116192FDA007AA7A3 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		A722973416193021007AA7A3 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		A7229736161934F6007AA7A3 /* MBusDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBusDataSource.h; sourceTree = "<group>"; };
-		A7229737161934F6007AA7A3 /* MBusDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBusDataSource.m; sourceTree = "<group>"; };
 		A727AF9716100F9B002B3A91 /* MBlueBus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MBlueBus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A727AF9B16100F9B002B3A91 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A727AF9D16100F9B002B3A91 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -47,12 +47,18 @@
 		A7C2E0C116309D5D006413B7 /* StopInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StopInfo.m; sourceTree = "<group>"; };
 		A7C2E0C316309EEB006413B7 /* RouteInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteInfo.h; sourceTree = "<group>"; };
 		A7C2E0C416309EEB006413B7 /* RouteInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteInfo.m; sourceTree = "<group>"; };
-		A7C2E0C61630A8CE006413B7 /* XMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLParser.h; sourceTree = "<group>"; };
-		A7C2E0C71630A8CE006413B7 /* XMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLParser.m; sourceTree = "<group>"; };
+		A7C2E0C61630A8CE006413B7 /* XMLRouteParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLRouteParser.h; sourceTree = "<group>"; };
+		A7C2E0C71630A8CE006413B7 /* XMLRouteParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLRouteParser.m; sourceTree = "<group>"; };
 		A7C2E11A1634AA78006413B7 /* ArrivalInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArrivalInfo.h; sourceTree = "<group>"; };
 		A7C2E11B1634AA78006413B7 /* ArrivalInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArrivalInfo.m; sourceTree = "<group>"; };
 		A7E9C024164A0340008A8760 /* BusLocationCoordinateInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusLocationCoordinateInfo.h; sourceTree = "<group>"; };
 		A7E9C025164A0340008A8760 /* BusLocationCoordinateInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusLocationCoordinateInfo.m; sourceTree = "<group>"; };
+		A7E9C039164A132C008A8760 /* XMLBusLocParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLBusLocParser.h; sourceTree = "<group>"; };
+		A7E9C03A164A132C008A8760 /* XMLBusLocParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLBusLocParser.m; sourceTree = "<group>"; };
+		A7E9C044164B07ED008A8760 /* LocDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocDataSource.h; sourceTree = "<group>"; };
+		A7E9C045164B07ED008A8760 /* LocDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocDataSource.m; sourceTree = "<group>"; };
+		A7E9C048164B084D008A8760 /* RouteDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteDataSource.h; sourceTree = "<group>"; };
+		A7E9C049164B084D008A8760 /* RouteDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteDataSource.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,10 +120,14 @@
 				A7C2E0C416309EEB006413B7 /* RouteInfo.m */,
 				A7E9C024164A0340008A8760 /* BusLocationCoordinateInfo.h */,
 				A7E9C025164A0340008A8760 /* BusLocationCoordinateInfo.m */,
-				A7C2E0C61630A8CE006413B7 /* XMLParser.h */,
-				A7C2E0C71630A8CE006413B7 /* XMLParser.m */,
-				A7229736161934F6007AA7A3 /* MBusDataSource.h */,
-				A7229737161934F6007AA7A3 /* MBusDataSource.m */,
+				A7C2E0C61630A8CE006413B7 /* XMLRouteParser.h */,
+				A7C2E0C71630A8CE006413B7 /* XMLRouteParser.m */,
+				A7E9C039164A132C008A8760 /* XMLBusLocParser.h */,
+				A7E9C03A164A132C008A8760 /* XMLBusLocParser.m */,
+				A7E9C048164B084D008A8760 /* RouteDataSource.h */,
+				A7E9C049164B084D008A8760 /* RouteDataSource.m */,
+				A7E9C044164B07ED008A8760 /* LocDataSource.h */,
+				A7E9C045164B07ED008A8760 /* LocDataSource.m */,
 				A727AFB016100F9B002B3A91 /* MBusViewController.h */,
 				A727AFB116100F9B002B3A91 /* MBusViewController.m */,
 				A727AFA216100F9B002B3A91 /* Supporting Files */,
@@ -203,12 +213,14 @@
 				A727AFA816100F9B002B3A91 /* main.m in Sources */,
 				A727AFAC16100F9B002B3A91 /* MBusAppDelegate.m in Sources */,
 				A727AFB216100F9B002B3A91 /* MBusViewController.m in Sources */,
-				A7229738161934F6007AA7A3 /* MBusDataSource.m in Sources */,
 				A7C2E0C216309D5D006413B7 /* StopInfo.m in Sources */,
 				A7C2E0C516309EEB006413B7 /* RouteInfo.m in Sources */,
-				A7C2E0C81630A8CE006413B7 /* XMLParser.m in Sources */,
+				A7C2E0C81630A8CE006413B7 /* XMLRouteParser.m in Sources */,
 				A7C2E11C1634AA78006413B7 /* ArrivalInfo.m in Sources */,
 				A7E9C026164A0340008A8760 /* BusLocationCoordinateInfo.m in Sources */,
+				A7E9C03B164A132C008A8760 /* XMLBusLocParser.m in Sources */,
+				A7E9C046164B07ED008A8760 /* LocDataSource.m in Sources */,
+				A7E9C04A164B084D008A8760 /* RouteDataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
