@@ -21,6 +21,8 @@
 		A7C2E0C216309D5D006413B7 /* StopInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A7C2E0C116309D5D006413B7 /* StopInfo.m */; };
 		A7C2E0C516309EEB006413B7 /* RouteInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A7C2E0C416309EEB006413B7 /* RouteInfo.m */; };
 		A7C2E0C81630A8CE006413B7 /* XMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = A7C2E0C71630A8CE006413B7 /* XMLParser.m */; };
+		A7C2E11C1634AA78006413B7 /* ArrivalInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A7C2E11B1634AA78006413B7 /* ArrivalInfo.m */; };
+		A7E9C026164A0340008A8760 /* BusLocationCoordinateInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A7E9C025164A0340008A8760 /* BusLocationCoordinateInfo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +49,10 @@
 		A7C2E0C416309EEB006413B7 /* RouteInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteInfo.m; sourceTree = "<group>"; };
 		A7C2E0C61630A8CE006413B7 /* XMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLParser.h; sourceTree = "<group>"; };
 		A7C2E0C71630A8CE006413B7 /* XMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLParser.m; sourceTree = "<group>"; };
+		A7C2E11A1634AA78006413B7 /* ArrivalInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArrivalInfo.h; sourceTree = "<group>"; };
+		A7C2E11B1634AA78006413B7 /* ArrivalInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArrivalInfo.m; sourceTree = "<group>"; };
+		A7E9C024164A0340008A8760 /* BusLocationCoordinateInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusLocationCoordinateInfo.h; sourceTree = "<group>"; };
+		A7E9C025164A0340008A8760 /* BusLocationCoordinateInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusLocationCoordinateInfo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,10 +106,14 @@
 				A727AFAA16100F9B002B3A91 /* MBusAppDelegate.h */,
 				A727AFAB16100F9B002B3A91 /* MBusAppDelegate.m */,
 				A727AFAD16100F9B002B3A91 /* MainStoryboard.storyboard */,
+				A7C2E11A1634AA78006413B7 /* ArrivalInfo.h */,
+				A7C2E11B1634AA78006413B7 /* ArrivalInfo.m */,
 				A7C2E0C016309D5D006413B7 /* StopInfo.h */,
 				A7C2E0C116309D5D006413B7 /* StopInfo.m */,
 				A7C2E0C316309EEB006413B7 /* RouteInfo.h */,
 				A7C2E0C416309EEB006413B7 /* RouteInfo.m */,
+				A7E9C024164A0340008A8760 /* BusLocationCoordinateInfo.h */,
+				A7E9C025164A0340008A8760 /* BusLocationCoordinateInfo.m */,
 				A7C2E0C61630A8CE006413B7 /* XMLParser.h */,
 				A7C2E0C71630A8CE006413B7 /* XMLParser.m */,
 				A7229736161934F6007AA7A3 /* MBusDataSource.h */,
@@ -197,6 +207,8 @@
 				A7C2E0C216309D5D006413B7 /* StopInfo.m in Sources */,
 				A7C2E0C516309EEB006413B7 /* RouteInfo.m in Sources */,
 				A7C2E0C81630A8CE006413B7 /* XMLParser.m in Sources */,
+				A7C2E11C1634AA78006413B7 /* ArrivalInfo.m in Sources */,
+				A7E9C026164A0340008A8760 /* BusLocationCoordinateInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
