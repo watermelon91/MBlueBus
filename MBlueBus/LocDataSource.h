@@ -7,7 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "XMLBusLocParser.h"
 
-@interface LocDataSource : NSObject
+@interface LocDataSource : NSObject{
+    @public
+    NSArray * parsedBusLocs;
+}
+
+@property (nonatomic, strong) NSArray * parsedBusLocs;
+
+- (id)init;
+
+- (void)doLocParse:(NSURL *)url;
 
 @end

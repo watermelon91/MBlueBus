@@ -10,4 +10,6 @@
 
 @implementation BusLocationCoordinateInfo
 
+@synthesize busID, latitude, longitude, heading, routeID, busRouteColor;
+
 @end

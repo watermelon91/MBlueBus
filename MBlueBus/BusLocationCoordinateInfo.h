@@ -8,6 +8,22 @@
 
 #import <Foundation/Foundation.h>
 
-@interface BusLocationCoordinateInfo : NSObject
+@interface BusLocationCoordinateInfo : NSObject{
+    NSInteger busID;
+    double latitude;
+    double longitude;
+    NSInteger heading;
+    NSInteger routeID;
+    NSString * busRouteColor;
+}
+
+@property (nonatomic) NSInteger busID;
+@property (nonatomic) double latitude;
+@property (nonatomic) double longitude;
+@property (nonatomic) NSInteger heading;
+@property (nonatomic) NSInteger routeID;
+@property (nonatomic, strong) NSString * busRouteColor;
+
+
 
 @end

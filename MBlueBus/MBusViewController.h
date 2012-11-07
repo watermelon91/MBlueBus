@@ -8,17 +8,22 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
-#import "MBusDataSource.h"
+#import "RouteDataSource.h"
+#import "LocDataSource.h"
 
-@interface MBusViewController : UIViewController {
+@interface MBusViewController : UIViewController<MKMapViewDelegate> {
     dispatch_source_t source;
-    NSURL *url;
-    DataSource * dataSource;
+    NSURL *routeUrl;
+    NSURL *locUrl;
+    RouteDataSource * routeDataSource;
+    LocDataSource * locDataSource;
 }
 
 @property (weak, nonatomic) IBOutlet MKMapView * mapView;
-@property (nonatomic, strong) NSURL * url;
-@property (nonatomic, strong) DataSource * dataSource;
+@property (nonatomic, strong) NSURL * routeUrl;
+@property (nonatomic, strong) NSURL * locUrl;
+@property (nonatomic, strong) RouteDataSource * routeDataSource;
+@property (nonatomic, strong) LocDataSource * locDataSource;
 
 - (void)awakeFromNib;
 

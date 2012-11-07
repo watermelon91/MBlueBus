@@ -7,7 +7,22 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "XMLRouteParser.h"
+#import "XMLBusLocParser.h"
 
-@interface RouteDataSource : NSObject
+@interface RouteDataSource : NSObject {
+    @public
+    NSArray * parsedRoutes;
+    NSInteger routeCount;
+}
+
+@property (nonatomic, strong) NSArray * parsedRoutes;
+@property (nonatomic) NSInteger routeCount;
+
+- (id)init;
+
+- (void)doRouteParse:(NSURL *)url;
 
 @end
+
+

@@ -9,20 +9,34 @@
 #import <Foundation/Foundation.h>
 #import "StopInfo.h"
 #import "RouteInfo.h"
+#import "ArrivalInfo.h"
 
-@interface XMLParser : NSObject <NSXMLParserDelegate>{
+@interface XMLRouteParser : NSObject <NSXMLParserDelegate>{
     @private
+    ArrivalInfo * currentArrivalBusInfo;
+    StopInfo * currentStop;
     RouteInfo * route;
     NSMutableString * currentElementValue;
     bool routeInProcess;
+    bool stopInProcess; /* routeInProcess : stopInProcess
+                         * YES/NO -- RouteInfo
+                         * NO/YES -- StopInfo
+                         * NO/NO  -- ArrivalBusInfo
+                         */
+    bool arriveInfoParseInProcess;
 
     @public
     NSMutableArray * routes;
     NSInteger routeCount;
 }
 
-@property (nonatomic) bool routeInProcess;
+@property (nonatomic, strong) ArrivalInfo * currentArrivalBusInfo;
+@property (nonatomic, strong) StopInfo * currentStop;
 @property (nonatomic, strong) RouteInfo * route;
+@property (nonatomic, strong) NSMutableString * currentElementValue;
+@property (nonatomic) bool routeInProcess;
+@property (nonatomic) bool stopInProcess;
+@property (nonatomic) bool arriveInfoParseInProcess;
 @property (nonatomic, strong) NSMutableArray * routes;
 @property (nonatomic) NSInteger routeCount;
 
