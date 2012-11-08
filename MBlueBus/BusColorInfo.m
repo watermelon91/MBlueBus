@@ -16,6 +16,7 @@
     if(self){
         colors = [[NSMutableArray alloc] init];
         colorDictionary = [[NSMutableDictionary alloc] init];
+        [self popData];
     }
 
     return self;
@@ -27,14 +28,26 @@
 
 - (void)popData{
     [colors addObject:@"990000"]; // Northwood
-    [colors addObject:@"009933"]; // BursleyBaits
-    [colors addObject:@"660099"]; // Commuter North
+    [colors addObject:@"009933"]; // BursleyBaits (Nights)
+    [colors addObject:@"660099"]; // Commuter North (Nights)
+    [colors addObject:@"3400FF"]; // Commuter South
+    [colors addObject:@"9933FF"]; // Commuter North
+    [colors addObject:@"007F00"]; // BursleyBaits
+    [colors addObject:@"993300"]; // Northwood express
+    [colors addObject:@"FF00FF"]; // Intercampus to NIB
+    [colors addObject:@"CC6600"]; // Oxford Loop to Northwood Express
+    [colors addObject:@"0000FF"]; // Research Link
     
     [colorDictionary setObject:[self convertColor:colors[0]] forKey:@"Northwood"];
     [colorDictionary setObject:[self convertColor:colors[1]] forKey:@"Burseley-Baits (Nights)"];
-    [colorDictionary setObject:[self convertColor:colors[1]] forKey:@"Burseley-Baits"];
     [colorDictionary setObject:[self convertColor:colors[2]] forKey:@"Commuter Northbound (Nights)"];
-    [colorDictionary setObject:[self convertColor:colors[2]] forKey:@"Commuter Northboud"];
+    [colorDictionary setObject:[self convertColor:colors[3]] forKey:@"Commuter Southbound"];
+    [colorDictionary setObject:[self convertColor:colors[4]] forKey:@"Commuter Northbound"];
+    [colorDictionary setObject:[self convertColor:colors[5]] forKey:@"Burseley-Baits"];
+    [colorDictionary setObject:[self convertColor:colors[6]] forKey:@"Northwood Express"];
+    [colorDictionary setObject:[self convertColor:colors[7]] forKey:@"Intercampus to NIB"];
+    [colorDictionary setObject:[self convertColor:colors[8]] forKey:@"Oxford Loop to Northwood Express"];
+    [colorDictionary setObject:[self convertColor:colors[9]] forKey:@"Research Link"];
 }
 
 - (UIColor *)convertColor: (NSString *)inputColor{
@@ -42,11 +55,25 @@
     UIColor * result;
     result = [[UIColor alloc] init];
     
-    CGFloat red = (([inputColor integerValue] & 0xFF0000) >> 16) / 255.0f;
-    CGFloat green = (([inputColor integerValue] & 0x00FF00) >> 8) / 255.0f;
-    CGFloat blue = ([inputColor integerValue] & 0x0000FF) / 255.0f;
+    NSRange range;
+    range.location = 0;
+    range.length = 2;
+    NSString *rString = [inputColor substringWithRange:range];
+    range.location = 2;
+    NSString *gString = [inputColor substringWithRange:range];
+    range.location = 4;
+    NSString *bString = [inputColor substringWithRange:range];
     
-    result = [result initWithRed:red green:green blue:blue alpha: 0.5f];
+    // Scan values
+    unsigned int r = 0, g = 0, b = 0;
+    [[NSScanner scannerWithString:rString] scanHexInt:&r];
+    [[NSScanner scannerWithString:gString] scanHexInt:&g];
+    [[NSScanner scannerWithString:bString] scanHexInt:&b];
+    
+    result = [UIColor colorWithRed:((float) r / 255.0f)
+                             green:((float) g / 255.0f)
+                              blue:((float) b / 255.0f)
+                             alpha:1.0f];
     
     return result;
 }

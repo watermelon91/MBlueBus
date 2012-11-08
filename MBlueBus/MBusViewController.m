@@ -39,7 +39,7 @@
                                               /* update UI here*/
                                               if ([lock tryLock] == YES) {
                                                   //[self PrintRouteLog];
-                                                  //[self PrintLocLog];
+                                                  [self PrintLocLog];
                                                   [self RemoveOldBus];
                                                   [self DrawBus];
                                                   [lock unlock];
@@ -81,36 +81,23 @@
     return YES;
 }
 
-// Practice code for overlay
 -(MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id<MKOverlay>)overlay
 {
     if([overlay isKindOfClass:[MKCircle class]]){
         MKCircleView * circleView = [[MKCircleView alloc] initWithCircle:(MKCircle *)overlay];
     
         MKCircle * temp = overlay;
-        [circleView setFillColor:[busColorInfo getColor:temp.title]];
+        UIColor * tempC = [busColorInfo getColor:temp.title];
+        [circleView setFillColor:tempC];
         
         [circleView setStrokeColor:[UIColor blackColor]];
-        [circleView setLineWidth:3];
+        [circleView setLineWidth:1];
         [circleView setAlpha:0.5f];
     
         return circleView;
     }else{
         return  nil;
     }
-    
-    /*if ([overlay isKindOfClass:[MKPolygon class]])
-    {
-        MKPolygonView * aView = [[MKPolygonView alloc] initWithPolygon:(MKPolygon*)overlay];
-        
-        aView.fillColor = [[UIColor cyanColor] colorWithAlphaComponent:0.2];
-        aView.strokeColor = [[UIColor blueColor] colorWithAlphaComponent:0.7];
-        aView.lineWidth = 3;
-        
-        return aView;
-    }
-    
-    return nil;*/
 }
 
 - (void)SetUp{
@@ -123,6 +110,25 @@
     
     locUrl = [[NSURL alloc] initWithString:@"http://mbus.pts.umich.edu/shared//location_feed.xml"];
     locDataSource = [[LocDataSource alloc] init];
+}
+
+- (void)RemoveOldBus{
+    for(MKCircle * c in busesOnMap){
+        [self.mapView removeOverlay:c];
+    }
+}
+
+- (void)DrawBus{
+    for(BusLocationCoordinateInfo * thisBus in locDataSource.parsedBusLocs){
+        CLLocationCoordinate2D location;
+        location.latitude = thisBus.latitude;
+        location.longitude = thisBus.longitude;
+        
+        MKCircle * circle = [MKCircle circleWithCenterCoordinate:location radius:50];
+        circle.title = thisBus.routeName;
+        [busesOnMap addObject:circle];
+        [self.mapView addOverlay: circle];
+    }
 }
 
 - (void)PrintRouteLog{
@@ -155,25 +161,5 @@
     
     NSLog(@"------------------------------------");
 }
-
-- (void)RemoveOldBus{
-    for(MKCircle * c in busesOnMap){
-        [self.mapView removeOverlay:c];
-    }
-}
-
-- (void)DrawBus{
-    for(BusLocationCoordinateInfo * thisBus in locDataSource.parsedBusLocs){
-        CLLocationCoordinate2D location;
-        location.latitude = thisBus.latitude;
-        location.longitude = thisBus.longitude;
-        
-        MKCircle * circle = [MKCircle circleWithCenterCoordinate:location radius:50];
-        circle.title = thisBus.routeName;
-        [busesOnMap addObject:circle];
-        [self.mapView addOverlay: circle];
-    }
-}
-
 
 @end
