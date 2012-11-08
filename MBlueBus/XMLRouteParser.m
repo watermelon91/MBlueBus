@@ -12,7 +12,7 @@
 // make when to add an object consistent
 
 @implementation XMLRouteParser
-@synthesize currentArrivalBusInfo, currentStop, route, currentElementValue, routeInProcess, stopInProcess, arriveInfoParseInProcess, routes, routeCount;
+@synthesize routes, routeCount;
 
 - (id)init{
     self = [super init];

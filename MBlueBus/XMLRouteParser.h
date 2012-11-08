@@ -12,7 +12,6 @@
 #import "ArrivalInfo.h"
 
 @interface XMLRouteParser : NSObject <NSXMLParserDelegate>{
-    @private
     ArrivalInfo * currentArrivalBusInfo;
     StopInfo * currentStop;
     RouteInfo * route;
@@ -25,18 +24,10 @@
                          */
     bool arriveInfoParseInProcess;
 
-    @public
     NSMutableArray * routes;
     NSInteger routeCount;
 }
 
-@property (nonatomic, strong) ArrivalInfo * currentArrivalBusInfo;
-@property (nonatomic, strong) StopInfo * currentStop;
-@property (nonatomic, strong) RouteInfo * route;
-@property (nonatomic, strong) NSMutableString * currentElementValue;
-@property (nonatomic) bool routeInProcess;
-@property (nonatomic) bool stopInProcess;
-@property (nonatomic) bool arriveInfoParseInProcess;
 @property (nonatomic, strong) NSMutableArray * routes;
 @property (nonatomic) NSInteger routeCount;
 

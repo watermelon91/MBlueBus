@@ -11,7 +11,6 @@
 #import "XMLBusLocParser.h"
 
 @interface RouteDataSource : NSObject {
-    @public
     NSArray * parsedRoutes;
     NSInteger routeCount;
 }

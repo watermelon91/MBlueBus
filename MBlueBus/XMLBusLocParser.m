@@ -9,7 +9,7 @@
 #import "XMLBusLocParser.h"
 
 @implementation XMLBusLocParser
-@synthesize currentBusLocInfo, currentElementValue, busLocs;
+@synthesize busLocs;
 
 - (id)init{
     self = [super init];
@@ -55,10 +55,12 @@ didStartElement:(NSString *)elementName
         currentBusLocInfo.longitude = [currentElementValue doubleValue];
     }else if([elementName isEqualToString:@"heading"]){
         currentBusLocInfo.heading = [currentElementValue integerValue];
+    }else if([elementName isEqualToString:@"route"]){
+        currentBusLocInfo.routeName = currentElementValue;
     }else if([elementName isEqualToString:@"routeid"]){
         currentBusLocInfo.routeID = [currentElementValue integerValue];
     }else if([elementName isEqualToString:@"busroutecolor"]){
-        currentBusLocInfo.busRouteColor = currentElementValue;
+        currentBusLocInfo.busRouteColor = [currentElementValue floatValue];
     }
     
     // Done with parsing one bus

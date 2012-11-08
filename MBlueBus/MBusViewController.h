@@ -10,21 +10,22 @@
 #import <MapKit/MapKit.h>
 #import "RouteDataSource.h"
 #import "LocDataSource.h"
+#import "BusColorInfo.h"
 
 @interface MBusViewController : UIViewController<MKMapViewDelegate> {
     dispatch_source_t source;
     NSURL *routeUrl;
     NSURL *locUrl;
+    NSLock * lock;
+    NSMutableArray * busesOnMap;
+    BusColorInfo * busColorInfo;
+    
     RouteDataSource * routeDataSource;
     LocDataSource * locDataSource;
 }
 
 @property (weak, nonatomic) IBOutlet MKMapView * mapView;
-@property (nonatomic, strong) NSURL * routeUrl;
-@property (nonatomic, strong) NSURL * locUrl;
 @property (nonatomic, strong) RouteDataSource * routeDataSource;
 @property (nonatomic, strong) LocDataSource * locDataSource;
-
-- (void)awakeFromNib;
 
 @end

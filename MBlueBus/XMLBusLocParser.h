@@ -10,16 +10,12 @@
 #import "BusLocationCoordinateInfo.h"
 
 @interface XMLBusLocParser : NSObject <NSXMLParserDelegate>{
-    @private
     BusLocationCoordinateInfo * currentBusLocInfo;
     NSMutableString * currentElementValue;
     
-    @public
     NSMutableArray * busLocs;
 }
 
-@property (nonatomic, strong) BusLocationCoordinateInfo * currentBusLocInfo;
-@property (nonatomic, strong) NSMutableString * currentElementValue;
 @property (nonatomic, strong) NSMutableArray * busLocs;
 
 - (id)init;

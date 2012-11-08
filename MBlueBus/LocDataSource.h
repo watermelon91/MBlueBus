@@ -10,7 +10,6 @@
 #import "XMLBusLocParser.h"
 
 @interface LocDataSource : NSObject{
-    @public
     NSArray * parsedBusLocs;
 }
 

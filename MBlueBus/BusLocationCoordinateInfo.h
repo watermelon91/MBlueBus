@@ -13,16 +13,18 @@
     double latitude;
     double longitude;
     NSInteger heading;
+    NSString * routeName;
     NSInteger routeID;
-    NSString * busRouteColor;
+    CGFloat busRouteColor;
 }
 
 @property (nonatomic) NSInteger busID;
 @property (nonatomic) double latitude;
 @property (nonatomic) double longitude;
 @property (nonatomic) NSInteger heading;
+@property (nonatomic, strong) NSString * routeName;
 @property (nonatomic) NSInteger routeID;
-@property (nonatomic, strong) NSString * busRouteColor;
+@property (nonatomic) CGFloat  busRouteColor;
 
 
 

@@ -15,60 +15,38 @@
 
 @implementation MBusViewController
 
-@synthesize mapView = _mapView, routeUrl, locUrl, routeDataSource, locDataSource, region = _region, span = _span;
+@synthesize mapView = _mapView, routeDataSource, locDataSource, region = _region, span = _span;
+
+// Finish building BusColorInfo
+// Color not working
 
 // pins with arriving time of lines
 // line layout
-// push notification
+// push notification (needs Apple Developer license)
 // table views for different lines
 
-- (void)PrintRouteLog{
-    for(int i = 0; i < [routeDataSource.parsedRoutes count]; i++){
-        NSLog(@"Route #%d \n", i);
-        RouteInfo * temp = [routeDataSource.parsedRoutes objectAtIndex:i];
-        NSLog(@"Route Name: %@, RouteID: %d, topOfLoop: %d, stopCount: %d \n",
-              temp.routeName, temp.routeID, temp.topOfLoop, temp.stopCount);
-        
-        for(int j = 0; j < temp.stopCount; j++){
-            StopInfo * stop = [temp.stops objectAtIndex:j];
-            NSLog(@"Stop oName: %@, Stop cName: %@, latitude: %f, longtitude: %f, # bus in op: %d\n", stop.officialName, stop.commonName, stop.latitude, stop.longtitude, stop.busInOperationNum);
-            
-            for(int h = 0; h < stop.busInOperationNum; h++){
-                ArrivalInfo * arv = [stop.arrivingSeconds objectAtIndex:h];
-                NSLog(@"busId: %d, arrivingSec: %f", arv.busID, arv.arrivingSeconds);
-            }
-            
-        }
-    }
-    NSLog(@"\n");
-}
-
-- (void)PrintLocLog{
-    for(BusLocationCoordinateInfo *thisBus in locDataSource.parsedBusLocs){
-        NSLog(@"busId: %d, latitude: %f, longitude: %f, heading: %d, routeID: %d, busRouteColor: %@", thisBus.busID, thisBus.latitude, thisBus.longitude, thisBus.heading, thisBus.routeID, thisBus.busRouteColor);
-    }
-}
-
 - (void)awakeFromNib {
-    routeUrl = [[NSURL alloc] initWithString:@"http://mbus.pts.umich.edu/shared/public_feed.xml"];
-    routeDataSource = [[RouteDataSource alloc] init];
-    
-    locUrl = [[NSURL alloc] initWithString:@"http://mbus.pts.umich.edu/shared//location_feed.xml"];
-    locDataSource = [[LocDataSource alloc] init];
+   
+    [self SetUp];
     
     source =  dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0));
     dispatch_source_set_event_handler(source,
                                       ^{
                                           /* Update Data */
-                                          //[routeDataSource doRouteParse:routeUrl];
+                                          [routeDataSource doRouteParse:routeUrl];
                                           [locDataSource doLocParse:locUrl];
                                           dispatch_async(dispatch_get_main_queue(), ^{
                                               /* update UI here*/
-                                              //[self PrintRouteLog];
-                                              [self PrintLocLog];
+                                              if ([lock tryLock] == YES) {
+                                                  //[self PrintRouteLog];
+                                                  //[self PrintLocLog];
+                                                  [self RemoveOldBus];
+                                                  [self DrawBus];
+                                                  [lock unlock];
+                                              }
                                           });
                                       });
-    dispatch_source_set_timer(source, DISPATCH_TIME_NOW, 5000000000, 1000000000);
+    dispatch_source_set_timer(source, DISPATCH_TIME_NOW, 3000000000, 1000000000);
 }
 
 - (void)viewDidLoad
@@ -89,11 +67,6 @@
     
     [_mapView setRegion:_region animated:TRUE];
     [_mapView regionThatFits:_region];
-    
-    // Practice code for overlay
-    MKCircle * circle = [MKCircle circleWithCenterCoordinate:location radius:50];
-    [self.mapView addOverlay: circle];
-    
 }
 
 - (void)viewDidUnload
@@ -111,13 +84,20 @@
 // Practice code for overlay
 -(MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id<MKOverlay>)overlay
 {
-    MKCircleView * circleView = [[MKCircleView alloc] initWithCircle:(MKCircle *)overlay];
-    [circleView setFillColor:[UIColor redColor]];
-    [circleView setStrokeColor:[UIColor blackColor]];
-    [circleView setLineWidth:3];
-    [circleView setAlpha:0.5f];
+    if([overlay isKindOfClass:[MKCircle class]]){
+        MKCircleView * circleView = [[MKCircleView alloc] initWithCircle:(MKCircle *)overlay];
     
-    return circleView;
+        MKCircle * temp = overlay;
+        [circleView setFillColor:[busColorInfo getColor:temp.title]];
+        
+        [circleView setStrokeColor:[UIColor blackColor]];
+        [circleView setLineWidth:3];
+        [circleView setAlpha:0.5f];
+    
+        return circleView;
+    }else{
+        return  nil;
+    }
     
     /*if ([overlay isKindOfClass:[MKPolygon class]])
     {
@@ -131,6 +111,68 @@
     }
     
     return nil;*/
+}
+
+- (void)SetUp{
+    lock = [[NSLock alloc] init];
+    busesOnMap = [[NSMutableArray alloc] init];
+    busColorInfo = [[BusColorInfo alloc] init];
+    
+    routeUrl = [[NSURL alloc] initWithString:@"http://mbus.pts.umich.edu/shared/public_feed.xml"];
+    routeDataSource = [[RouteDataSource alloc] init];
+    
+    locUrl = [[NSURL alloc] initWithString:@"http://mbus.pts.umich.edu/shared//location_feed.xml"];
+    locDataSource = [[LocDataSource alloc] init];
+}
+
+- (void)PrintRouteLog{
+    for(int i = 0; i < [routeDataSource.parsedRoutes count]; i++){
+        NSLog(@"Route #%d \n", i);
+        RouteInfo * temp = [routeDataSource.parsedRoutes objectAtIndex:i];
+        NSLog(@"Route Name: %@, RouteID: %d, topOfLoop: %d, stopCount: %d \n",
+              temp.routeName, temp.routeID, temp.topOfLoop, temp.stopCount);
+        
+        for(int j = 0; j < temp.stopCount; j++){
+            StopInfo * stop = [temp.stops objectAtIndex:j];
+            //NSLog(@"Stop oName: %@, Stop cName: %@, latitude: %f, longtitude: %f, # bus in op: %d\n", stop.officialName, stop.commonName, stop.latitude, stop.longtitude, stop.busInOperationNum);
+            
+            for(int h = 0; h < stop.busInOperationNum; h++){
+                ArrivalInfo * arv = [stop.arrivingSeconds objectAtIndex:h];
+                NSLog(@"busId: %d, arrivingSec: %f", arv.busID, arv.arrivingSeconds);
+            }
+            
+        }
+    }
+    NSLog(@"\n");
+}
+
+- (void)PrintLocLog{
+    NSLog(@"------------------------------------");
+    
+    for(BusLocationCoordinateInfo *thisBus in locDataSource.parsedBusLocs){
+        NSLog(@"busId: %d, latitude: %f, longitude: %f, heading: %d, routeName: %@, routeID: %d, busRouteColor: %f", thisBus.busID, thisBus.latitude, thisBus.longitude, thisBus.heading, thisBus.routeName, thisBus.routeID, thisBus.busRouteColor);
+    }
+    
+    NSLog(@"------------------------------------");
+}
+
+- (void)RemoveOldBus{
+    for(MKCircle * c in busesOnMap){
+        [self.mapView removeOverlay:c];
+    }
+}
+
+- (void)DrawBus{
+    for(BusLocationCoordinateInfo * thisBus in locDataSource.parsedBusLocs){
+        CLLocationCoordinate2D location;
+        location.latitude = thisBus.latitude;
+        location.longitude = thisBus.longitude;
+        
+        MKCircle * circle = [MKCircle circleWithCenterCoordinate:location radius:50];
+        circle.title = thisBus.routeName;
+        [busesOnMap addObject:circle];
+        [self.mapView addOverlay: circle];
+    }
 }
 
 
