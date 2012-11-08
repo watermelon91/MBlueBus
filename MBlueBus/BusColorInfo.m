@@ -37,17 +37,21 @@
     [colors addObject:@"FF00FF"]; // Intercampus to NIB
     [colors addObject:@"CC6600"]; // Oxford Loop to Northwood Express
     [colors addObject:@"0000FF"]; // Research Link
+    [colors addObject:@"FF0000"]; // Diag to Diag
+    [colors addObject:@"FF6600"]; // Med Express
     
     [colorDictionary setObject:[self convertColor:colors[0]] forKey:@"Northwood"];
-    [colorDictionary setObject:[self convertColor:colors[1]] forKey:@"Burseley-Baits (Nights)"];
+    [colorDictionary setObject:[self convertColor:colors[1]] forKey:@"Bursley-Baits (Nights)"];
     [colorDictionary setObject:[self convertColor:colors[2]] forKey:@"Commuter Northbound (Nights)"];
     [colorDictionary setObject:[self convertColor:colors[3]] forKey:@"Commuter Southbound"];
     [colorDictionary setObject:[self convertColor:colors[4]] forKey:@"Commuter Northbound"];
-    [colorDictionary setObject:[self convertColor:colors[5]] forKey:@"Burseley-Baits"];
+    [colorDictionary setObject:[self convertColor:colors[5]] forKey:@"Bursley-Baits"];
     [colorDictionary setObject:[self convertColor:colors[6]] forKey:@"Northwood Express"];
     [colorDictionary setObject:[self convertColor:colors[7]] forKey:@"Intercampus to NIB"];
     [colorDictionary setObject:[self convertColor:colors[8]] forKey:@"Oxford Loop to Northwood Express"];
     [colorDictionary setObject:[self convertColor:colors[9]] forKey:@"Research Link"];
+    [colorDictionary setObject:[self convertColor:colors[10]] forKey:@"Diag to Diag Express"];
+    [colorDictionary setObject:[self convertColor:colors[11]] forKey:@"MedExpress"];
 }
 
 - (UIColor *)convertColor: (NSString *)inputColor{
