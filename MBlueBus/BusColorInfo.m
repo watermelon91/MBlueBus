@@ -41,6 +41,7 @@
     [colors addObject:@"FF6600"]; // Med Express
     [colors addObject:@"00CC00"]; // Intercampus to East Campus
     [colors addObject:@"FF9900"]; // Oxford Shuttle
+    [colors addObject:@"0000FF"]; // Commuter South (Nights)
     
     [colorDictionary setObject:[self convertColor:colors[0]] forKey:@"Northwood"];
     [colorDictionary setObject:[self convertColor:colors[1]] forKey:@"Bursley-Baits (Nights)"];
@@ -56,6 +57,7 @@
     [colorDictionary setObject:[self convertColor:colors[11]] forKey:@"MedExpress"];
     [colorDictionary setObject:[self convertColor:colors[12]] forKey:@"Intercampus to East Campus"];
     [colorDictionary setObject:[self convertColor:colors[13]] forKey:@"Oxford Shuttle"];
+    [colorDictionary setObject:[self convertColor:colors[14]] forKey:@"Commuter Southbound (Nights)"];
 }
 
 - (UIColor *)convertColor: (NSString *)inputColor{
