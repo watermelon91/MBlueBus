@@ -83,6 +83,7 @@
 
 -(MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id<MKOverlay>)overlay
 {
+    /*
     if([overlay isKindOfClass:[MKCircle class]]){
         MKCircleView * circleView = [[MKCircleView alloc] initWithCircle:(MKCircle *)overlay];
     
@@ -92,11 +93,51 @@
         
         [circleView setStrokeColor:[UIColor blackColor]];
         [circleView setLineWidth:1];
-        [circleView setAlpha:0.5f];
+        [circleView setAlpha:1.0f];
     
         return circleView;
     }else{
         return  nil;
+    }
+     */
+    /*
+    
+    if([overlay isKindOfClass:[MKPolyline class]]){
+        MKPolylineView * polyView = [[MKPolylineView alloc] initWithPolyline:(MKPolyline *) overlay];
+        
+        MKPolyline * tempP = overlay;
+        UIColor * tempC = [busColorInfo getColor:tempP.title];
+        [polyView setFillColor:tempC];
+        
+        [polyView setStrokeColor:tempC];
+        [polyView setLineWidth:3];
+        [polyView setAlpha:1.0f];
+        
+        return polyView;
+    }else{
+        return nil;
+    }*/
+    
+    
+    if([overlay isKindOfClass:[MKPolygon class]]){
+        MKPolygonView * polyView = [[MKPolygonView alloc] initWithPolygon:(MKPolygon *)overlay];
+        
+        MKPolygon * tempP = overlay;
+        UIColor * tempC = [busColorInfo getColor:tempP.title];
+        
+        [polyView setFillColor:tempC];
+        [polyView setStrokeColor:tempC];
+        [polyView setLineWidth:3];
+        [polyView setAlpha:1.0f];
+        
+        /*if([tempP.title isEqualToString:@"Commuter Northbound (Nights)"]){
+            NSLog(@"CNN found");
+            NSLog(@"%@", tempC);
+        }*/
+        
+        return polyView;
+    }else{
+        return nil;
     }
 }
 
@@ -120,14 +161,86 @@
 
 - (void)DrawBus{
     for(BusLocationCoordinateInfo * thisBus in locDataSource.parsedBusLocs){
+        /*
         CLLocationCoordinate2D location;
         location.latitude = thisBus.latitude;
         location.longitude = thisBus.longitude;
+         */
         
+        
+        // heading 0 - clockwise
+        CLLocationCoordinate2D busShapeCord[5];
+        double height = 0.001, leg = 0.0005, length = 0.0005;
+        
+        thisBus.heading = thisBus.heading % 360;
+        double rotationDegree = thisBus.heading / 360.0 * 2 * M_PI;
+        //double leftRotationDegree = ((thisBus.heading + 270) % 360) / 360.0 * 2 * M_PI;
+        //double rightRotationDegree = ((thisBus.heading + 90) % 360) / 360.0 * 2 * M_PI;
+        double leftRotationDegree = ((thisBus.heading + 225) % 360) / 360.0 * 2 * M_PI;
+        double rightRotationDegree = ((thisBus.heading + 135) % 360) / 360.0 * 2 * M_PI;
+         
+        /*if(thisBus.heading >= 0 && thisBus.heading <= 90){
+            rotationDegree = (90 - thisBus.heading) / 360.0;
+        }else if(thisBus.heading > 90 && thisBus.heading <= 180){
+            rotationDegree = (thisBus.heading - 90) / 360;
+        }else if(thisBus.heading > 180 && thisBus.heading <= 270){
+            rotationDegree = (thisBus.heading - 90) / 360.0;
+        }else if(thisBus.heading > 270 && thisBus.heading <= 360){
+            rotationDegree = (90 - thisBus.heading) / 360.0;
+        }else{
+            rotationDegree = -2;
+            NSLog(@"Bad bus heading received");
+            return;
+        }*/
+
+        // Middle Point
+        busShapeCord[0].latitude = thisBus.latitude;
+        busShapeCord[0].longitude = thisBus.longitude;
+        
+        busShapeCord[1].latitude = thisBus.latitude + leg * cos(leftRotationDegree);
+        busShapeCord[1].longitude = thisBus.longitude + leg * sin(leftRotationDegree);
+        
+        busShapeCord[2].latitude = thisBus.latitude + height * cos(rotationDegree);
+        busShapeCord[2].longitude = thisBus.longitude + height * sin(rotationDegree);
+        
+        busShapeCord[3].latitude = thisBus.latitude + leg * cos(rightRotationDegree);
+        busShapeCord[3].longitude = thisBus.longitude + leg * sin(rightRotationDegree);
+        
+        busShapeCord[4].latitude = thisBus.latitude;
+        busShapeCord[4].longitude = thisBus.longitude;
+      
+        /*
+        busShapeCord[0].latitude = thisBus.latitude + length / 2 * sqrt(3) * cos(rotationDegree);
+        busShapeCord[0].longitude = thisBus.longitude + length / 2 * sqrt(3) * sin(rotationDegree);
+        
+        busShapeCord[1].latitude = thisBus.latitude + length * cos(leftRotationDegree);
+        busShapeCord[1].longitude = thisBus.longitude + length * sin(leftRotationDegree);
+        
+        busShapeCord[2].latitude = thisBus.latitude + length * cos(rightRotationDegree);
+        busShapeCord[2].longitude = thisBus.longitude + length * sin(rightRotationDegree);
+        
+        busShapeCord[3].latitude = thisBus.latitude + length / 2 * sqrt(3) * cos(rotationDegree);
+        busShapeCord[3].longitude = thisBus.longitude + length / 2 * sqrt(3) * sin(rotationDegree);
+        */
+        
+        /*
         MKCircle * circle = [MKCircle circleWithCenterCoordinate:location radius:50];
         circle.title = thisBus.routeName;
         [busesOnMap addObject:circle];
         [self.mapView addOverlay: circle];
+        */
+        
+        /*
+        MKPolyline * poly = [MKPolyline polylineWithCoordinates:busShapeCord count:5];
+        poly.title = thisBus.routeName;
+        [busesOnMap addObject:poly];
+        [self.mapView addOverlay:poly];*/
+        
+        MKPolygon * poly = [MKPolygon polygonWithCoordinates:busShapeCord count:4];
+        poly.title = thisBus.routeName;
+        [busesOnMap addObject:poly];
+        [self.mapView addOverlay:poly];
+         
     }
 }
 
