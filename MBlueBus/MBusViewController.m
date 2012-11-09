@@ -18,7 +18,6 @@
 @synthesize mapView = _mapView, routeDataSource, locDataSource, region = _region, span = _span;
 
 // Finish building BusColorInfo
-// Color not working
 
 // pins with arriving time of lines
 // line layout
