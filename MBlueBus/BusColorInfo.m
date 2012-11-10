@@ -58,6 +58,8 @@
     [colorDictionary setObject:[self convertColor:colors[12]] forKey:@"Intercampus to East Campus"];
     [colorDictionary setObject:[self convertColor:colors[13]] forKey:@"Oxford Shuttle"];
     [colorDictionary setObject:[self convertColor:colors[14]] forKey:@"Commuter Southbound (Nights)"];
+    [colorDictionary setObject:[self convertColor:colors[14]] forKey:@"North Campus to Burs/Baits and Northwood  (Sat Morning)"];
+    [colorDictionary setObject:[self convertColor:colors[0]] forKey:@"North Campus to Central Campus (Sat Morning)"];
 }
 
 - (UIColor *)convertColor: (NSString *)inputColor{
