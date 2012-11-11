@@ -51,6 +51,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self.navigationItem setTitle:@"Blue Bus Map View"];
     self.mapView.delegate = self;
     self.singleLineScrollView.delegate = self;
 	// Do any additional setup after loading the view, typically from a nib.
@@ -59,8 +60,8 @@
     _span.latitudeDelta = 0.0326;
     _span.longitudeDelta = 0.017;
     CLLocationCoordinate2D location;
-    location.latitude = 42.2858;
-    location.longitude = -83.7269;
+    location.latitude = 42.2845;
+    location.longitude = -83.7260;
     
     _region.span = _span;
     _region.center = location;
