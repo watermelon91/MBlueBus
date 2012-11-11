@@ -15,7 +15,7 @@
 
 @implementation MBusViewController
 
-@synthesize mapView = _mapView, routeDataSource, locDataSource, region = _region, span = _span;
+@synthesize mapView = _mapView, routeDataSource, locDataSource, region = _region, span = _span, singleLineScrollView = _singleLineScrollView;
 
 // Finish building BusColorInfo
 
@@ -52,10 +52,11 @@
 {
     [super viewDidLoad];
     self.mapView.delegate = self;
+    self.singleLineScrollView.delegate = self;
 	// Do any additional setup after loading the view, typically from a nib.
     dispatch_resume(source);
     
-    _span.latitudeDelta = 0.025;
+    _span.latitudeDelta = 0.0326;
     _span.longitudeDelta = 0.017;
     CLLocationCoordinate2D location;
     location.latitude = 42.2858;
@@ -71,6 +72,7 @@
 - (void)viewDidUnload
 {
     dispatch_suspend(source);
+    [self setSingleLineScrollView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -145,7 +147,7 @@
         
         // heading 0 - clockwise
         CLLocationCoordinate2D busShapeCord[5];
-        double height = 0.001, leg = 0.0005;
+        double height = 0.0005, leg = 0.00025;
         
         thisBus.heading = thisBus.heading % 360;
         double rotationDegree = thisBus.heading / 360.0 * 2 * M_PI;

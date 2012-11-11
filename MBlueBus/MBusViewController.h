@@ -12,7 +12,7 @@
 #import "LocDataSource.h"
 #import "BusColorInfo.h"
 
-@interface MBusViewController : UIViewController<MKMapViewDelegate> {
+@interface MBusViewController : UIViewController<MKMapViewDelegate, UIScrollViewDelegate> {
     dispatch_source_t source;
     NSURL *routeUrl;
     NSURL *locUrl;
@@ -27,5 +27,6 @@
 @property (weak, nonatomic) IBOutlet MKMapView * mapView;
 @property (nonatomic, strong) RouteDataSource * routeDataSource;
 @property (nonatomic, strong) LocDataSource * locDataSource;
+@property (weak, nonatomic) IBOutlet UIScrollView *singleLineScrollView;
 
 @end
