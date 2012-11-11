@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
     <scenes>
-        <!--Bus View Controller - Line View-->
+        <!--Bus View Controller - Map View-->
         <scene sceneID="4">
             <objects>
-                <viewController title="Line View" wantsFullScreenLayout="YES" id="2" customClass="MBusViewController" sceneMemberID="viewController">
+                <viewController title="Map View" wantsFullScreenLayout="YES" id="2" customClass="MBusViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6ZO-mc-mTP">
                         <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -148,7 +148,7 @@
         
         // heading 0 - clockwise
         CLLocationCoordinate2D busShapeCord[5];
-        double height = 0.0005, leg = 0.00025;
+        double height = 0.00035, leg = 0.00025;
         
         thisBus.heading = thisBus.heading % 360;
         double rotationDegree = thisBus.heading / 360.0 * 2 * M_PI;
