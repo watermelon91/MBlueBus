@@ -15,7 +15,7 @@
 
 @implementation MBusViewController
 
-@synthesize mapView = _mapView, routeDataSource, locDataSource, region = _region, span = _span, singleLineScrollView = _singleLineScrollView;
+@synthesize mapView = _mapView, routeDataSource, locDataSource, stopViewPopover, region = _region, span = _span;
 
 // Finish building BusColorInfo
 
@@ -34,6 +34,7 @@
                                           /* Update Data */
                                           [routeDataSource doRouteParse:routeUrl];
                                           [locDataSource doLocParse:locUrl];
+                                          [[NSNotificationCenter defaultCenter] postNotificationName:@"currentRouteDataUpdatedInMainView" object:routeDataSource];
                                           dispatch_async(dispatch_get_main_queue(), ^{
                                               /* update UI here*/
                                               if ([lock tryLock] == YES) {
@@ -51,10 +52,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    // Do any additional setup after loading the view, typically from a nib.
     [self.navigationItem setTitle:@"Blue Bus Map View"];
+    
+    lineViewButton = [[UIBarButtonItem alloc] initWithTitle:@"Line View" style: UIBarButtonItemStylePlain target:self action:@selector(buttonPressed:)];
+    stopViewButton = [[UIBarButtonItem alloc] initWithTitle:@"Stop View" style: UIBarButtonItemStylePlain target:self action:@selector(buttonPressed:)];
+    self.navigationItem.leftBarButtonItem = lineViewButton;
+    self.navigationItem.rightBarButtonItem = stopViewButton;
     self.mapView.delegate = self;
-    self.singleLineScrollView.delegate = self;
-	// Do any additional setup after loading the view, typically from a nib.
+    
     dispatch_resume(source);
     
     _span.latitudeDelta = 0.0326;
@@ -62,10 +69,8 @@
     CLLocationCoordinate2D location;
     location.latitude = 42.2845;
     location.longitude = -83.7260;
-    
     _region.span = _span;
     _region.center = location;
-    
     [_mapView setRegion:_region animated:TRUE];
     [_mapView regionThatFits:_region];
 }
@@ -73,7 +78,6 @@
 - (void)viewDidUnload
 {
     dispatch_suspend(source);
-    [self setSingleLineScrollView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -81,6 +85,26 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return YES;
+}
+
+- (IBAction)buttonPressed:(id)sender
+{
+    if([stopViewPopover isPopoverVisible]){
+        [stopViewPopover dismissPopoverAnimated:YES];
+    }
+    
+    UIBarButtonItem * temp = sender;
+    
+    if([temp.title isEqualToString:@"Line View"]){
+        
+    }else if([temp.title isEqualToString:@"Stop View"]){
+        StopViewPopoverContentController * stopViewPC = [[StopViewPopoverContentController alloc] init];
+        [stopViewPC setTitle:@"Stop List"];
+        UINavigationController * childNavigationForStopViewPopover = [[UINavigationController alloc] initWithRootViewController:stopViewPC];
+        stopViewPopover = [[UIPopoverController alloc] initWithContentViewController:childNavigationForStopViewPopover];
+        [stopViewPopover presentPopoverFromBarButtonItem: stopViewButton permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+        //stopViewPopover.popoverContentSize = CGSizeMake(250, 250);
+    }
 }
 
 -(MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id<MKOverlay>)overlay
@@ -184,6 +208,10 @@
         [self.mapView addOverlay:poly];
          
     }
+}
+
+- (void)UpdateStopViewBusArrivalInfo{
+    
 }
 
 - (void)PrintRouteLog{

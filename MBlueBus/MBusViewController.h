@@ -11,6 +11,7 @@
 #import "RouteDataSource.h"
 #import "LocDataSource.h"
 #import "BusColorInfo.h"
+#import "StopViewPopoverContentController.h"
 
 @interface MBusViewController : UIViewController<MKMapViewDelegate, UIScrollViewDelegate> {
     dispatch_source_t source;
@@ -19,14 +20,17 @@
     NSLock * lock;
     NSMutableArray * busesOnMap;
     BusColorInfo * busColorInfo;
+    UIBarButtonItem * lineViewButton;
+    UIBarButtonItem * stopViewButton;
     
     RouteDataSource * routeDataSource;
     LocDataSource * locDataSource;
+    UIPopoverController * stopViewPopover;
 }
 
 @property (weak, nonatomic) IBOutlet MKMapView * mapView;
 @property (nonatomic, strong) RouteDataSource * routeDataSource;
 @property (nonatomic, strong) LocDataSource * locDataSource;
-@property (weak, nonatomic) IBOutlet UIScrollView *singleLineScrollView;
+@property (nonatomic, strong) UIPopoverController * stopViewPopover;
 
 @end
