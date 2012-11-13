@@ -9,11 +9,10 @@
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
 
-@interface BusColorInfo : NSObject{
-    NSMutableArray * colors;
-    NSMutableDictionary * colorDictionary;
-}
+@interface BusAttributeInfo : NSObject
 
-- (UIColor *)getColor: (NSString *) routeName;
++ (void)initStatic;
++ (UIColor *)getColor: (NSString *) routeName;
++ (NSString *)getName: (NSString *) commonName;
 
 @end

@@ -131,7 +131,7 @@
         MKPolygonView * polyView = [[MKPolygonView alloc] initWithPolygon:(MKPolygon *)overlay];
         
         MKPolygon * tempP = overlay;
-        UIColor * tempC = [busColorInfo getColor:tempP.title];
+        UIColor * tempC = [BusAttributeInfo getColor:tempP.title];
         
         [polyView setFillColor:tempC];
         [polyView setStrokeColor:tempC];
@@ -147,7 +147,7 @@
 - (void)SetUp{
     lock = [[NSLock alloc] init];
     busesOnMap = [[NSMutableArray alloc] init];
-    busColorInfo = [[BusColorInfo alloc] init];
+    busColorInfo = [[BusAttributeInfo alloc] init];
     
     routeUrl = [[NSURL alloc] initWithString:@"http://mbus.pts.umich.edu/shared/public_feed.xml"];
     routeDataSource = [[RouteDataSource alloc] init];

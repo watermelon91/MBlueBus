@@ -10,7 +10,7 @@
 #import <MapKit/MapKit.h>
 #import "RouteDataSource.h"
 #import "LocDataSource.h"
-#import "BusColorInfo.h"
+#import "BusAttributeInfo.h"
 #import "StopViewPopoverContentController.h"
 
 @interface MBusViewController : UIViewController<MKMapViewDelegate, UIScrollViewDelegate> {
@@ -19,7 +19,7 @@
     NSURL *locUrl;
     NSLock * lock;
     NSMutableArray * busesOnMap;
-    BusColorInfo * busColorInfo;
+    BusAttributeInfo * busColorInfo;
     UIBarButtonItem * lineViewButton;
     UIBarButtonItem * stopViewButton;
     

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BusAttributeInfo.h"
 #import "RouteDataSource.h"
 #import "stopViewAllRouteArrivingInfo.h"
 

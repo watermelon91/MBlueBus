@@ -94,13 +94,7 @@
     for(stopViewAllRouteArrivingInfo * tempSV in [stopAndArrivingInfos objectForKey:self.selectedStop]){
         NSLog(@"Route Name: %@, Arriving Time: %f", tempSV.routeName, tempSV.arrivingSeconds);
     }*/
-    NSInteger result = [[stopAndArrivingInfos objectForKey:self.selectedStop] count];
-    
-    if(result == 0){
-        return 1;
-    }else{
-        return result;
-    }
+    return [[stopAndArrivingInfos objectForKey:self.selectedStop] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -112,11 +106,11 @@
     }
     
     NSMutableArray * tempResult = [stopAndArrivingInfos objectForKey: self.selectedStop];
-    if([tempResult count] == 0){
-       // cell.textLabel.text = @"No bus operating via this stop currently.";
+    stopViewAllRouteArrivingInfo * tempSA = [tempResult objectAtIndex:indexPath.row];
+    if(tempSA.arrivingSeconds <= 60){
+        cell.textLabel.text = [NSString stringWithFormat:@"%@, Arriving", [BusAttributeInfo getName:tempSA.routeName]];
     }else{
-        stopViewAllRouteArrivingInfo * tempSA = [tempResult objectAtIndex:indexPath.row];
-        cell.textLabel.text = [NSString stringWithFormat:@"%@, %f", tempSA.routeName, tempSA.arrivingSeconds];
+        cell.textLabel.text = [NSString stringWithFormat:@"%@, %1.0f min", [BusAttributeInfo getName:tempSA.routeName], (tempSA.arrivingSeconds) / 60];
     }
     
     return cell;

@@ -7,12 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BusAttributeInfo.h"
 
 #import "MBusAppDelegate.h"
 
 int main(int argc, char *argv[])
 {
     @autoreleasepool {
+        [BusAttributeInfo initStatic];
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([MBusAppDelegate class]));
     }
 }
