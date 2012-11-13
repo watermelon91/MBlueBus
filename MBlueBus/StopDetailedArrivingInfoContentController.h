@@ -12,7 +12,9 @@
 #import "stopViewAllRouteArrivingInfo.h"
 
 @interface StopDetailedArrivingInfoContentController : UIViewController{
+    BOOL firstTimeCalled;
     NSMutableArray * thisStopArrivingInfo;
+    NSMutableArray * tempResult;
     NSMutableDictionary * stopAndArrivingInfos;
     NSArray * dictionaryKeys;
 }

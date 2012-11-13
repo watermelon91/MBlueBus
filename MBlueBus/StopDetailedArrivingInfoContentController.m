@@ -23,6 +23,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        firstTimeCalled = YES;
         stopAndArrivingInfos = [NSMutableDictionary dictionaryWithCapacity:0];
         dictionaryKeys = [[NSArray alloc] init];
     }
@@ -64,14 +65,17 @@
                 [stopAndArrivingInfos removeObjectForKey:tempS.commonName];
             }
             
+            NSMutableArray * currentResult = [[NSMutableArray alloc] init];
             for(int h = 0; h < tempS.busInOperationNum; h++){
                 ArrivalInfo * arv = [tempS.arrivingSeconds objectAtIndex:h];
                 stopViewAllRouteArrivingInfo * tempSA = [[stopViewAllRouteArrivingInfo alloc] init];
                 tempSA.routeName = tempR.routeName;
                 tempSA.arrivingSeconds = arv.arrivingSeconds;
-                [result addObject:tempSA];
+                [currentResult addObject:tempSA];
             }
             
+            currentResult = [[currentResult sortedArrayUsingSelector:@selector(compare:)] mutableCopy];
+            [result addObjectsFromArray:currentResult];
             [stopAndArrivingInfos setObject:result forKey:tempS.commonName];
         }
     }
@@ -89,6 +93,8 @@
     });
 }
 
+
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     /*NSLog(@"%@", self.selectedStop);
     for(stopViewAllRouteArrivingInfo * tempSV in [stopAndArrivingInfos objectForKey:self.selectedStop]){
@@ -105,12 +111,23 @@
                                       reuseIdentifier:cellIdentifier];
     }
     
-    NSMutableArray * tempResult = [stopAndArrivingInfos objectForKey: self.selectedStop];
-    stopViewAllRouteArrivingInfo * tempSA = [tempResult objectAtIndex:indexPath.row];
-    if(tempSA.arrivingSeconds <= 60){
-        cell.textLabel.text = [NSString stringWithFormat:@"%@, Arriving", [BusAttributeInfo getName:tempSA.routeName]];
-    }else{
-        cell.textLabel.text = [NSString stringWithFormat:@"%@, %1.0f min", [BusAttributeInfo getName:tempSA.routeName], (tempSA.arrivingSeconds) / 60];
+    if(firstTimeCalled){
+        tempResult = [stopAndArrivingInfos objectForKey: self.selectedStop];
+        firstTimeCalled = NO;
+    }
+    
+    if(indexPath.row <= [tempResult count]){
+        stopViewAllRouteArrivingInfo * tempSA = [tempResult objectAtIndex:indexPath.row];
+        if(tempSA.arrivingSeconds <= 60){
+            cell.textLabel.text = [NSString stringWithFormat:@"%@, Arriving", [BusAttributeInfo getName:tempSA.routeName]];
+            cell.textLabel.textColor = [UIColor redColor];
+        }else{
+            cell.textLabel.text = [NSString stringWithFormat:@"%@, %1.0f min", [BusAttributeInfo getName:tempSA.routeName], (tempSA.arrivingSeconds) / 60];
+        }
+    }
+    
+    if(indexPath.row  == [tempResult count]){
+        firstTimeCalled = YES;
     }
     
     return cell;
