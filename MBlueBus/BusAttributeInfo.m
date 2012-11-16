@@ -71,6 +71,8 @@ NSMutableDictionary * nameDictionary = nil;
     [commonBusNames addObject:@"Oxford Shuttle (Weekends)"];
     [commonBusNames addObject:@"North Campus to Central Campus (Sun Morning)"];
     [commonBusNames addObject:@"North Campus to Burs/Baits and Northwood  (Sun Morning)"];
+    [commonBusNames addObject:@"North Campus to Central Campus (Mon-Thu)"];
+    [commonBusNames addObject:@"North Campus to Burs/Baits and Northwood  (Mon-Thu)"];
 
     [colorDictionary setObject:[BusAttributeInfo convertColor:colors[0]] forKey:[commonBusNames objectAtIndex:0]];
     [colorDictionary setObject:[BusAttributeInfo convertColor:colors[1]] forKey:[commonBusNames objectAtIndex:1]];
@@ -94,7 +96,9 @@ NSMutableDictionary * nameDictionary = nil;
     [colorDictionary setObject:[BusAttributeInfo convertColor:colors[13]] forKey:[commonBusNames objectAtIndex:19]];
     [colorDictionary setObject:[BusAttributeInfo convertColor:colors[15]] forKey:[commonBusNames objectAtIndex:20]];
     [colorDictionary setObject:[BusAttributeInfo convertColor:colors[15]] forKey:[commonBusNames objectAtIndex:21]];
-    
+    [colorDictionary setObject:[BusAttributeInfo convertColor:colors[15]] forKey:[commonBusNames objectAtIndex:22]];
+    [colorDictionary setObject:[BusAttributeInfo convertColor:colors[15]] forKey:[commonBusNames objectAtIndex:23]];
+         
     [nameDictionary setObject:@"NW" forKey:commonBusNames[0]];
     [nameDictionary setObject:@"B-Baits (Nights)" forKey:commonBusNames[1]];
     [nameDictionary setObject:@"CN (Nights)" forKey:commonBusNames[2]];
@@ -117,6 +121,8 @@ NSMutableDictionary * nameDictionary = nil;
     [nameDictionary setObject:@"Oxf (Wkd)" forKey:commonBusNames[19]];
     [nameDictionary setObject:@"NC2Central" forKey:commonBusNames[20]];
     [nameDictionary setObject:@"NC2North" forKey:commonBusNames[21]];
+    [nameDictionary setObject:@"NC2Central" forKey:commonBusNames[22]];
+    [nameDictionary setObject:@"NC2North" forKey:commonBusNames[23]];
 }
 
 + (UIColor *)convertColor: (NSString *)inputColor{
