@@ -11,9 +11,11 @@
 @interface stopViewAllRouteArrivingInfo : NSObject{
     NSString * routeName;
     double arrivingSeconds;
+    NSInteger direction; // 0 as IN, 1 as OUT, 2 as non-loop
 }
 
 @property (nonatomic, strong) NSString * routeName;
 @property (nonatomic) double arrivingSeconds;
+@property (nonatomic) NSInteger direction;
 
 @end

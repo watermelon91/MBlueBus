@@ -13,6 +13,7 @@
 
 @interface StopDetailedArrivingInfoContentController : UIViewController{
     BOOL firstTimeCalled;
+    NSArray * directionLookup;
     NSMutableArray * thisStopArrivingInfo;
     NSMutableArray * tempResult;
     NSMutableDictionary * stopAndArrivingInfos;

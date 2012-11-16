@@ -26,6 +26,7 @@
         firstTimeCalled = YES;
         stopAndArrivingInfos = [NSMutableDictionary dictionaryWithCapacity:0];
         dictionaryKeys = [[NSArray alloc] init];
+        directionLookup = [[NSArray alloc] initWithObjects:@"(IN)", @"(OUT)", @"", nil];
     }
     return self;
 }
@@ -54,6 +55,12 @@
     
     for(int i = 0; i < [tempRouteDataSource.parsedRoutes count]; i++){
         RouteInfo * tempR = [tempRouteDataSource.parsedRoutes objectAtIndex:i];
+        bool isLoop;
+        if(tempR.topOfLoop != 0){
+            isLoop = YES;
+        }else{
+            isLoop = NO;
+        }
         for(int j = 0; j < tempR.stopCount; j++){
             StopInfo * tempS = [tempR.stops objectAtIndex:j];
             
@@ -71,6 +78,16 @@
                 stopViewAllRouteArrivingInfo * tempSA = [[stopViewAllRouteArrivingInfo alloc] init];
                 tempSA.routeName = tempR.routeName;
                 tempSA.arrivingSeconds = arv.arrivingSeconds;
+                
+                if(isLoop){
+                    if(j <= tempR.topOfLoop){
+                        tempSA.direction = 1;
+                    }else{
+                        tempSA.direction = 0;
+                    }
+                }else{
+                    tempSA.direction = 2;
+                }
                 [currentResult addObject:tempSA];
             }
             
@@ -119,10 +136,10 @@
     if(indexPath.row <= [tempResult count]){
         stopViewAllRouteArrivingInfo * tempSA = [tempResult objectAtIndex:indexPath.row];
         if(tempSA.arrivingSeconds <= 60){
-            cell.textLabel.text = [NSString stringWithFormat:@"%@, Arriving", [BusAttributeInfo getName:tempSA.routeName]];
+            cell.textLabel.text = [NSString stringWithFormat:@"%@ %@, Arriving", [BusAttributeInfo getName:tempSA.routeName], directionLookup[tempSA.direction]];
             cell.textLabel.textColor = [UIColor redColor];
         }else{
-            cell.textLabel.text = [NSString stringWithFormat:@"%@, %1.0f min", [BusAttributeInfo getName:tempSA.routeName], (tempSA.arrivingSeconds) / 60];
+            cell.textLabel.text = [NSString stringWithFormat:@"%@ %@, %1.0f min", [BusAttributeInfo getName:tempSA.routeName], directionLookup[tempSA.direction], (tempSA.arrivingSeconds) / 60];
         }
     }
     

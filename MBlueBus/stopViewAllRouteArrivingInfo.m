@@ -10,7 +10,7 @@
 
 @implementation stopViewAllRouteArrivingInfo
 
-@synthesize routeName, arrivingSeconds;
+@synthesize routeName, arrivingSeconds, direction;
 
 int sgn(double val) {
     return (0 < val) - (val < 0);
