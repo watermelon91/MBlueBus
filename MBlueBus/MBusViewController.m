@@ -15,7 +15,7 @@
 
 @implementation MBusViewController
 
-@synthesize mapView = _mapView, routeDataSource, locDataSource, stopViewPopover, region = _region, span = _span;
+@synthesize mapView = _mapView, routeDataSource, locDataSource, stopViewPopover, lineViewPopover, region = _region, span = _span;
 
 // Finish building BusColorInfo
 
@@ -39,7 +39,7 @@
                                               /* update UI here*/
                                               if ([lock tryLock] == YES) {
                                                   //[self PrintRouteLog];
-                                                  [self PrintLocLog];
+                                                  //[self PrintLocLog];
                                                   [self RemoveOldBus];
                                                   [self DrawBus];
                                                   [lock unlock];
@@ -49,6 +49,9 @@
     dispatch_source_set_timer(source, DISPATCH_TIME_NOW, 2000000000, 1000000000);
 }
 
+- (void) feedbackAction {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString: @"https://docs.google.com/spreadsheet/viewform?fromEmail=true&formkey=dHE5TlQzbGx2SUZ0OFRCNWplUTh4UFE6MQ"]];
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -58,9 +61,12 @@
     
     lineViewButton = [[UIBarButtonItem alloc] initWithTitle:@"Line View" style: UIBarButtonItemStylePlain target:self action:@selector(buttonPressed:)];
     stopViewButton = [[UIBarButtonItem alloc] initWithTitle:@"Stop View" style: UIBarButtonItemStylePlain target:self action:@selector(buttonPressed:)];
+    feedbackButton = [[UIBarButtonItem alloc] initWithTitle:@"Feedback" style:UIBarButtonItemStyleBordered target:self action:@selector(feedbackAction)];
+    
     self.navigationItem.leftBarButtonItem = lineViewButton;
     self.navigationItem.rightBarButtonItem = stopViewButton;
     self.mapView.delegate = self;
+    [toolbar setItems:[NSArray arrayWithObjects:feedbackButton, nil] animated:YES];
     
     dispatch_resume(source);
     
@@ -96,7 +102,11 @@
     UIBarButtonItem * temp = sender;
     
     if([temp.title isEqualToString:@"Line View"]){
-        
+        LineViewPopoverContentController * lineViewPC = [[LineViewPopoverContentController alloc] init];
+        [lineViewPC setTitle:@"Line List"];
+        UINavigationController * childNavigationForLineViewPopover = [[UINavigationController alloc] initWithRootViewController:lineViewPC];
+        lineViewPopover = [[UIPopoverController alloc] initWithContentViewController:childNavigationForLineViewPopover];
+        [lineViewPopover presentPopoverFromBarButtonItem:lineViewButton permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
     }else if([temp.title isEqualToString:@"Stop View"]){
         StopViewPopoverContentController * stopViewPC = [[StopViewPopoverContentController alloc] init];
         [stopViewPC setTitle:@"Stop List"];

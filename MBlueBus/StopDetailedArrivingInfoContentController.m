@@ -133,7 +133,7 @@
         firstTimeCalled = NO;
     }
     
-    if(indexPath.row <= [tempResult count]){
+    if(indexPath.row < [tempResult count]){
         stopViewAllRouteArrivingInfo * tempSA = [tempResult objectAtIndex:indexPath.row];
         if(tempSA.arrivingSeconds <= 60){
             cell.textLabel.text = [NSString stringWithFormat:@"%@ %@, Arriving", [BusAttributeInfo getName:tempSA.routeName], directionLookup[tempSA.direction]];
