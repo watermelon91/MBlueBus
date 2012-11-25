@@ -33,6 +33,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getNotification:) name:@"currentRouteDataUpdatedInMainView" object:nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -44,7 +45,6 @@
 - (void)viewDidUnload {
     [self setLineArrivingInfoTable:nil];
     [super viewDidUnload];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getNotification:) name:@"currentRouteDataUpdatedInMainView" object:nil];
 }
 
 - (void)getNotification:(NSNotification *)notification{

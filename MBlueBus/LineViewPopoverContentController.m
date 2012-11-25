@@ -33,6 +33,7 @@
     self.lineViewTable.delegate = self;
     self.lineViewTable.scrollEnabled = YES;
     self.lineViewTable.bounces = YES;
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getNotification:) name:@"currentRouteDataUpdatedInMainView" object:nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -44,7 +45,6 @@
 - (void)viewDidUnload {
     [self setLineViewTable:nil];
     [super viewDidUnload];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getNotification:) name:@"currentRouteDataUpdatedInMainView" object:nil];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

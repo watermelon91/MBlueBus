@@ -99,6 +99,10 @@
         [stopViewPopover dismissPopoverAnimated:YES];
     }
     
+    if([lineViewPopover isPopoverVisible]){
+        [lineViewPopover dismissPopoverAnimated:YES];
+    }
+    
     UIBarButtonItem * temp = sender;
     
     if([temp.title isEqualToString:@"Line View"]){

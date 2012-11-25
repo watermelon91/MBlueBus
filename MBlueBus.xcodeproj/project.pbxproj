@@ -17,14 +17,25 @@
 		A727AFAC16100F9B002B3A91 /* MBusAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A727AFAB16100F9B002B3A91 /* MBusAppDelegate.m */; };
 		A727AFAF16100F9B002B3A91 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A727AFAD16100F9B002B3A91 /* MainStoryboard.storyboard */; };
 		A727AFB216100F9B002B3A91 /* MBusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A727AFB116100F9B002B3A91 /* MBusViewController.m */; };
+		A79060EA165FFC5C00C263DB /* LineDetailedArrivingInfoContentController.m in Sources */ = {isa = PBXBuildFile; fileRef = A79060E3165FFC5C00C263DB /* LineDetailedArrivingInfoContentController.m */; };
+		A79060EB165FFC5C00C263DB /* LineDetailedArrivingInfoContentController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A79060E4165FFC5C00C263DB /* LineDetailedArrivingInfoContentController.xib */; };
+		A79060EC165FFC5C00C263DB /* LineViewAllStopArrivingInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A79060E6165FFC5C00C263DB /* LineViewAllStopArrivingInfo.m */; };
+		A79060ED165FFC5C00C263DB /* LineViewPopoverContentController.m in Sources */ = {isa = PBXBuildFile; fileRef = A79060E8165FFC5C00C263DB /* LineViewPopoverContentController.m */; };
+		A79060EE165FFC5C00C263DB /* LineViewPopoverContentController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A79060E9165FFC5C00C263DB /* LineViewPopoverContentController.xib */; };
 		A7C2E0C216309D5D006413B7 /* StopInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A7C2E0C116309D5D006413B7 /* StopInfo.m */; };
 		A7C2E0C516309EEB006413B7 /* RouteInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A7C2E0C416309EEB006413B7 /* RouteInfo.m */; };
 		A7C2E0C81630A8CE006413B7 /* XMLRouteParser.m in Sources */ = {isa = PBXBuildFile; fileRef = A7C2E0C71630A8CE006413B7 /* XMLRouteParser.m */; };
 		A7C2E11C1634AA78006413B7 /* ArrivalInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A7C2E11B1634AA78006413B7 /* ArrivalInfo.m */; };
+		A7C30E3D165028A700D889F2 /* StopViewPopoverContentController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7C30E3B165028A700D889F2 /* StopViewPopoverContentController.m */; };
+		A7C30E3E165028A700D889F2 /* StopViewPopoverContentController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7C30E3C165028A700D889F2 /* StopViewPopoverContentController.xib */; };
+		A7C30E47165061EC00D889F2 /* StopDetailedArrivingInfoContentController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7C30E45165061EC00D889F2 /* StopDetailedArrivingInfoContentController.m */; };
+		A7C30E48165061EC00D889F2 /* StopDetailedArrivingInfoContentController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7C30E46165061EC00D889F2 /* StopDetailedArrivingInfoContentController.xib */; };
+		A7C30E511650AB3400D889F2 /* stopViewAllRouteArrivingInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A7C30E501650AB3400D889F2 /* stopViewAllRouteArrivingInfo.m */; };
 		A7E9C026164A0340008A8760 /* BusLocationCoordinateInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A7E9C025164A0340008A8760 /* BusLocationCoordinateInfo.m */; };
 		A7E9C03B164A132C008A8760 /* XMLBusLocParser.m in Sources */ = {isa = PBXBuildFile; fileRef = A7E9C03A164A132C008A8760 /* XMLBusLocParser.m */; };
 		A7E9C046164B07ED008A8760 /* LocDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = A7E9C045164B07ED008A8760 /* LocDataSource.m */; };
 		A7E9C04A164B084D008A8760 /* RouteDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = A7E9C049164B084D008A8760 /* RouteDataSource.m */; };
+		A7E9C056164B6DAA008A8760 /* BusAttributeInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A7E9C055164B6DAA008A8760 /* BusAttributeInfo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +54,14 @@
 		A727AFAE16100F9B002B3A91 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		A727AFB016100F9B002B3A91 /* MBusViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBusViewController.h; sourceTree = "<group>"; };
 		A727AFB116100F9B002B3A91 /* MBusViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBusViewController.m; sourceTree = "<group>"; };
+		A79060E2165FFC5C00C263DB /* LineDetailedArrivingInfoContentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LineDetailedArrivingInfoContentController.h; path = MBlueBus/LineDetailedArrivingInfoContentController.h; sourceTree = "<group>"; };
+		A79060E3165FFC5C00C263DB /* LineDetailedArrivingInfoContentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LineDetailedArrivingInfoContentController.m; path = MBlueBus/LineDetailedArrivingInfoContentController.m; sourceTree = "<group>"; };
+		A79060E4165FFC5C00C263DB /* LineDetailedArrivingInfoContentController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LineDetailedArrivingInfoContentController.xib; path = MBlueBus/LineDetailedArrivingInfoContentController.xib; sourceTree = "<group>"; };
+		A79060E5165FFC5C00C263DB /* LineViewAllStopArrivingInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LineViewAllStopArrivingInfo.h; path = MBlueBus/LineViewAllStopArrivingInfo.h; sourceTree = "<group>"; };
+		A79060E6165FFC5C00C263DB /* LineViewAllStopArrivingInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LineViewAllStopArrivingInfo.m; path = MBlueBus/LineViewAllStopArrivingInfo.m; sourceTree = "<group>"; };
+		A79060E7165FFC5C00C263DB /* LineViewPopoverContentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LineViewPopoverContentController.h; path = MBlueBus/LineViewPopoverContentController.h; sourceTree = "<group>"; };
+		A79060E8165FFC5C00C263DB /* LineViewPopoverContentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LineViewPopoverContentController.m; path = MBlueBus/LineViewPopoverContentController.m; sourceTree = "<group>"; };
+		A79060E9165FFC5C00C263DB /* LineViewPopoverContentController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LineViewPopoverContentController.xib; path = MBlueBus/LineViewPopoverContentController.xib; sourceTree = "<group>"; };
 		A7C2E0C016309D5D006413B7 /* StopInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StopInfo.h; sourceTree = "<group>"; };
 		A7C2E0C116309D5D006413B7 /* StopInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StopInfo.m; sourceTree = "<group>"; };
 		A7C2E0C316309EEB006413B7 /* RouteInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteInfo.h; sourceTree = "<group>"; };
@@ -51,6 +70,14 @@
 		A7C2E0C71630A8CE006413B7 /* XMLRouteParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLRouteParser.m; sourceTree = "<group>"; };
 		A7C2E11A1634AA78006413B7 /* ArrivalInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArrivalInfo.h; sourceTree = "<group>"; };
 		A7C2E11B1634AA78006413B7 /* ArrivalInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArrivalInfo.m; sourceTree = "<group>"; };
+		A7C30E3A165028A700D889F2 /* StopViewPopoverContentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StopViewPopoverContentController.h; path = MBlueBus/StopViewPopoverContentController.h; sourceTree = "<group>"; };
+		A7C30E3B165028A700D889F2 /* StopViewPopoverContentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StopViewPopoverContentController.m; path = MBlueBus/StopViewPopoverContentController.m; sourceTree = "<group>"; };
+		A7C30E3C165028A700D889F2 /* StopViewPopoverContentController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = StopViewPopoverContentController.xib; path = MBlueBus/StopViewPopoverContentController.xib; sourceTree = "<group>"; };
+		A7C30E44165061EC00D889F2 /* StopDetailedArrivingInfoContentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StopDetailedArrivingInfoContentController.h; path = MBlueBus/StopDetailedArrivingInfoContentController.h; sourceTree = "<group>"; };
+		A7C30E45165061EC00D889F2 /* StopDetailedArrivingInfoContentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StopDetailedArrivingInfoContentController.m; path = MBlueBus/StopDetailedArrivingInfoContentController.m; sourceTree = "<group>"; };
+		A7C30E46165061EC00D889F2 /* StopDetailedArrivingInfoContentController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = StopDetailedArrivingInfoContentController.xib; path = MBlueBus/StopDetailedArrivingInfoContentController.xib; sourceTree = "<group>"; };
+		A7C30E4F1650AB3400D889F2 /* stopViewAllRouteArrivingInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = stopViewAllRouteArrivingInfo.h; path = MBlueBus/stopViewAllRouteArrivingInfo.h; sourceTree = "<group>"; };
+		A7C30E501650AB3400D889F2 /* stopViewAllRouteArrivingInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = stopViewAllRouteArrivingInfo.m; path = MBlueBus/stopViewAllRouteArrivingInfo.m; sourceTree = "<group>"; };
 		A7E9C024164A0340008A8760 /* BusLocationCoordinateInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusLocationCoordinateInfo.h; sourceTree = "<group>"; };
 		A7E9C025164A0340008A8760 /* BusLocationCoordinateInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusLocationCoordinateInfo.m; sourceTree = "<group>"; };
 		A7E9C039164A132C008A8760 /* XMLBusLocParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLBusLocParser.h; sourceTree = "<group>"; };
@@ -59,6 +86,8 @@
 		A7E9C045164B07ED008A8760 /* LocDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocDataSource.m; sourceTree = "<group>"; };
 		A7E9C048164B084D008A8760 /* RouteDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteDataSource.h; sourceTree = "<group>"; };
 		A7E9C049164B084D008A8760 /* RouteDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteDataSource.m; sourceTree = "<group>"; };
+		A7E9C054164B6DAA008A8760 /* BusAttributeInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusAttributeInfo.h; sourceTree = "<group>"; };
+		A7E9C055164B6DAA008A8760 /* BusAttributeInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusAttributeInfo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,22 +141,11 @@
 				A727AFAA16100F9B002B3A91 /* MBusAppDelegate.h */,
 				A727AFAB16100F9B002B3A91 /* MBusAppDelegate.m */,
 				A727AFAD16100F9B002B3A91 /* MainStoryboard.storyboard */,
-				A7C2E11A1634AA78006413B7 /* ArrivalInfo.h */,
-				A7C2E11B1634AA78006413B7 /* ArrivalInfo.m */,
-				A7C2E0C016309D5D006413B7 /* StopInfo.h */,
-				A7C2E0C116309D5D006413B7 /* StopInfo.m */,
-				A7C2E0C316309EEB006413B7 /* RouteInfo.h */,
-				A7C2E0C416309EEB006413B7 /* RouteInfo.m */,
-				A7E9C024164A0340008A8760 /* BusLocationCoordinateInfo.h */,
-				A7E9C025164A0340008A8760 /* BusLocationCoordinateInfo.m */,
-				A7C2E0C61630A8CE006413B7 /* XMLRouteParser.h */,
-				A7C2E0C71630A8CE006413B7 /* XMLRouteParser.m */,
-				A7E9C039164A132C008A8760 /* XMLBusLocParser.h */,
-				A7E9C03A164A132C008A8760 /* XMLBusLocParser.m */,
-				A7E9C048164B084D008A8760 /* RouteDataSource.h */,
-				A7E9C049164B084D008A8760 /* RouteDataSource.m */,
-				A7E9C044164B07ED008A8760 /* LocDataSource.h */,
-				A7E9C045164B07ED008A8760 /* LocDataSource.m */,
+				A7C30E5C1651B3D600D889F2 /* StopListPopoverView */,
+				A7F5BD6D165603CB00A615FB /* RouteListPopoverView */,
+				A7E9C04B164B3F7F008A8760 /* Parsing */,
+				A7E9C054164B6DAA008A8760 /* BusAttributeInfo.h */,
+				A7E9C055164B6DAA008A8760 /* BusAttributeInfo.m */,
 				A727AFB016100F9B002B3A91 /* MBusViewController.h */,
 				A727AFB116100F9B002B3A91 /* MBusViewController.m */,
 				A727AFA216100F9B002B3A91 /* Supporting Files */,
@@ -144,6 +162,61 @@
 				A727AFA916100F9B002B3A91 /* MBlueBus-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A7C30E5C1651B3D600D889F2 /* StopListPopoverView */ = {
+			isa = PBXGroup;
+			children = (
+				A7C30E4F1650AB3400D889F2 /* stopViewAllRouteArrivingInfo.h */,
+				A7C30E501650AB3400D889F2 /* stopViewAllRouteArrivingInfo.m */,
+				A7C30E44165061EC00D889F2 /* StopDetailedArrivingInfoContentController.h */,
+				A7C30E45165061EC00D889F2 /* StopDetailedArrivingInfoContentController.m */,
+				A7C30E46165061EC00D889F2 /* StopDetailedArrivingInfoContentController.xib */,
+				A7C30E3A165028A700D889F2 /* StopViewPopoverContentController.h */,
+				A7C30E3B165028A700D889F2 /* StopViewPopoverContentController.m */,
+				A7C30E3C165028A700D889F2 /* StopViewPopoverContentController.xib */,
+			);
+			name = StopListPopoverView;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		A7E9C04B164B3F7F008A8760 /* Parsing */ = {
+			isa = PBXGroup;
+			children = (
+				A7C2E11A1634AA78006413B7 /* ArrivalInfo.h */,
+				A7C2E11B1634AA78006413B7 /* ArrivalInfo.m */,
+				A7C2E0C016309D5D006413B7 /* StopInfo.h */,
+				A7C2E0C116309D5D006413B7 /* StopInfo.m */,
+				A7C2E0C316309EEB006413B7 /* RouteInfo.h */,
+				A7C2E0C416309EEB006413B7 /* RouteInfo.m */,
+				A7E9C024164A0340008A8760 /* BusLocationCoordinateInfo.h */,
+				A7E9C025164A0340008A8760 /* BusLocationCoordinateInfo.m */,
+				A7C2E0C61630A8CE006413B7 /* XMLRouteParser.h */,
+				A7C2E0C71630A8CE006413B7 /* XMLRouteParser.m */,
+				A7E9C039164A132C008A8760 /* XMLBusLocParser.h */,
+				A7E9C03A164A132C008A8760 /* XMLBusLocParser.m */,
+				A7E9C048164B084D008A8760 /* RouteDataSource.h */,
+				A7E9C049164B084D008A8760 /* RouteDataSource.m */,
+				A7E9C044164B07ED008A8760 /* LocDataSource.h */,
+				A7E9C045164B07ED008A8760 /* LocDataSource.m */,
+			);
+			name = Parsing;
+			sourceTree = "<group>";
+		};
+		A7F5BD6D165603CB00A615FB /* RouteListPopoverView */ = {
+			isa = PBXGroup;
+			children = (
+				A79060E5165FFC5C00C263DB /* LineViewAllStopArrivingInfo.h */,
+				A79060E6165FFC5C00C263DB /* LineViewAllStopArrivingInfo.m */,
+				A79060E2165FFC5C00C263DB /* LineDetailedArrivingInfoContentController.h */,
+				A79060E3165FFC5C00C263DB /* LineDetailedArrivingInfoContentController.m */,
+				A79060E4165FFC5C00C263DB /* LineDetailedArrivingInfoContentController.xib */,
+				A79060E7165FFC5C00C263DB /* LineViewPopoverContentController.h */,
+				A79060E8165FFC5C00C263DB /* LineViewPopoverContentController.m */,
+				A79060E9165FFC5C00C263DB /* LineViewPopoverContentController.xib */,
+			);
+			name = RouteListPopoverView;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,6 +273,10 @@
 			files = (
 				A727AFA616100F9B002B3A91 /* InfoPlist.strings in Resources */,
 				A727AFAF16100F9B002B3A91 /* MainStoryboard.storyboard in Resources */,
+				A7C30E3E165028A700D889F2 /* StopViewPopoverContentController.xib in Resources */,
+				A7C30E48165061EC00D889F2 /* StopDetailedArrivingInfoContentController.xib in Resources */,
+				A79060EB165FFC5C00C263DB /* LineDetailedArrivingInfoContentController.xib in Resources */,
+				A79060EE165FFC5C00C263DB /* LineViewPopoverContentController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,6 +298,13 @@
 				A7E9C03B164A132C008A8760 /* XMLBusLocParser.m in Sources */,
 				A7E9C046164B07ED008A8760 /* LocDataSource.m in Sources */,
 				A7E9C04A164B084D008A8760 /* RouteDataSource.m in Sources */,
+				A7E9C056164B6DAA008A8760 /* BusAttributeInfo.m in Sources */,
+				A7C30E3D165028A700D889F2 /* StopViewPopoverContentController.m in Sources */,
+				A7C30E47165061EC00D889F2 /* StopDetailedArrivingInfoContentController.m in Sources */,
+				A7C30E511650AB3400D889F2 /* stopViewAllRouteArrivingInfo.m in Sources */,
+				A79060EA165FFC5C00C263DB /* LineDetailedArrivingInfoContentController.m in Sources */,
+				A79060EC165FFC5C00C263DB /* LineViewAllStopArrivingInfo.m in Sources */,
+				A79060ED165FFC5C00C263DB /* LineViewPopoverContentController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
