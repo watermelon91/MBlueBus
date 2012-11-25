@@ -74,11 +74,15 @@
                 }
             }
             
-            minArrivingTime = minArrivingTime / 60;
-            if(minArrivingTime < 1){
-                thisStop.arrivingTime = @"Arriving";
+            if(tempS.busInOperationNum < 1){
+                thisStop.arrivingTime = @"No bus avail";
             }else{
-                thisStop.arrivingTime = [NSString stringWithFormat:@"%d", minArrivingTime];
+                minArrivingTime = minArrivingTime / 60;
+                if(minArrivingTime < 1){
+                    thisStop.arrivingTime = @"Arriving";
+                }else{
+                    thisStop.arrivingTime = [NSString stringWithFormat:@"%d min", minArrivingTime];
+                }
             }
             
             [currentLineInfo addObject:thisStop];
@@ -114,6 +118,10 @@
         LineViewAllStopArrivingInfo * tempSA = [tempResult objectAtIndex:indexPath.row];
         
         cell.textLabel.text = [NSString stringWithFormat:@"%@: %@", tempSA.stopName, tempSA.arrivingTime];
+        
+        if([tempSA.arrivingTime isEqualToString:@"Arriving"]){
+            cell.textLabel.textColor = [UIColor redColor];
+        }
     }
     
     if(indexPath.row == [tempResult count]){
