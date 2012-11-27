@@ -73,6 +73,7 @@ NSMutableDictionary * nameDictionary = nil;
     [commonBusNames addObject:@"North Campus to Burs/Baits and Northwood  (Sun Morning)"];
     [commonBusNames addObject:@"North Campus to Central Campus (Mon-Thu)"];
     [commonBusNames addObject:@"North Campus to Burs/Baits and Northwood  (Mon-Thu)"];
+    [commonBusNames addObject:@"Oxford Loop to Diag to Diag Express"];
 
     [colorDictionary setObject:[BusAttributeInfo convertColor:colors[0]] forKey:[commonBusNames objectAtIndex:0]];
     [colorDictionary setObject:[BusAttributeInfo convertColor:colors[1]] forKey:[commonBusNames objectAtIndex:1]];
@@ -98,6 +99,7 @@ NSMutableDictionary * nameDictionary = nil;
     [colorDictionary setObject:[BusAttributeInfo convertColor:colors[15]] forKey:[commonBusNames objectAtIndex:21]];
     [colorDictionary setObject:[BusAttributeInfo convertColor:colors[15]] forKey:[commonBusNames objectAtIndex:22]];
     [colorDictionary setObject:[BusAttributeInfo convertColor:colors[15]] forKey:[commonBusNames objectAtIndex:23]];
+    [colorDictionary setObject:[BusAttributeInfo convertColor:colors[11]] forKey:[commonBusNames objectAtIndex:24]];
          
     [nameDictionary setObject:@"NW" forKey:commonBusNames[0]];
     [nameDictionary setObject:@"B-Baits (Nights)" forKey:commonBusNames[1]];
@@ -123,6 +125,7 @@ NSMutableDictionary * nameDictionary = nil;
     [nameDictionary setObject:@"NC2North" forKey:commonBusNames[21]];
     [nameDictionary setObject:@"NC2Central" forKey:commonBusNames[22]];
     [nameDictionary setObject:@"NC2North" forKey:commonBusNames[23]];
+    [nameDictionary setObject:@"Oxf-D2D Loop" forKey:commonBusNames[24]];
 }
 
 + (UIColor *)convertColor: (NSString *)inputColor{

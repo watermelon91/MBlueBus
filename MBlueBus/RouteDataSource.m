@@ -31,7 +31,7 @@
     BOOL success = [nsXmlParser parse];
     
     if(success) {
-        NSLog(@"No errors");
+        //NSLog(@"No errors");
         parsedRoutes = [NSArray arrayWithArray:[parser routes]];
         routeCount = [parser routeCount];
     }else{

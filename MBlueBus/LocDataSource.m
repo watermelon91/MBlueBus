@@ -29,7 +29,7 @@
     BOOL success = [nsXmlParser parse];
     
     if(success){
-        NSLog(@"No errors");
+        //NSLog(@"No errors");
         parsedBusLocs = [NSArray arrayWithArray:[parser busLocs]];
     }else{
         NSLog(@"Error parsing in LocDataSource.m");

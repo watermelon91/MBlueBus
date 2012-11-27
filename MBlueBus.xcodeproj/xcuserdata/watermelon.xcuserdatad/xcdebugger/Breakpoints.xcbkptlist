@@ -34,11 +34,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MBlueBus/MBusViewController.m"
-         timestampString = "375554203.699877"
+         timestampString = "375733359.377125"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "131"
-         endingLineNumber = "131"
+         startingLineNumber = "124"
+         endingLineNumber = "124"
          landmarkName = "-mapView:viewForOverlay:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -47,11 +47,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MBlueBus/MBusViewController.m"
-         timestampString = "375554203.699877"
+         timestampString = "375733359.377125"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "130"
-         endingLineNumber = "130"
+         startingLineNumber = "123"
+         endingLineNumber = "123"
          landmarkName = "-mapView:viewForOverlay:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -86,11 +86,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MBlueBus/MBusViewController.m"
-         timestampString = "375554203.699877"
+         timestampString = "375733359.377125"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "174"
-         endingLineNumber = "174"
+         startingLineNumber = "167"
+         endingLineNumber = "167"
          landmarkName = "-RemoveOldBus"
          landmarkType = "5">
       </FileBreakpoint>
@@ -99,11 +99,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MBlueBus/MBusViewController.m"
-         timestampString = "375554203.699877"
+         timestampString = "375733359.377125"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "142"
-         endingLineNumber = "142"
+         startingLineNumber = "135"
+         endingLineNumber = "135"
          landmarkName = "-mapView:viewForOverlay:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -112,24 +112,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MBlueBus/MBusViewController.m"
-         timestampString = "375554203.699877"
+         timestampString = "375733359.377125"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "183"
-         endingLineNumber = "183"
-         landmarkName = "-DrawBus"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "MBlueBus/MBusViewController.m"
-         timestampString = "375554203.699877"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "142"
-         endingLineNumber = "142"
+         startingLineNumber = "135"
+         endingLineNumber = "135"
          landmarkName = "-mapView:viewForOverlay:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -138,11 +125,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MBlueBus/MBusViewController.m"
-         timestampString = "375554203.699877"
+         timestampString = "375733359.377125"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "219"
-         endingLineNumber = "219"
+         startingLineNumber = "199"
+         endingLineNumber = "199"
          landmarkName = "-DrawBus"
          landmarkType = "5">
       </FileBreakpoint>
@@ -151,11 +138,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MBlueBus/MBusViewController.m"
-         timestampString = "375554203.699877"
+         timestampString = "375733359.377125"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "150"
-         endingLineNumber = "150"
+         startingLineNumber = "143"
+         endingLineNumber = "143"
          landmarkName = "-mapView:viewForOverlay:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -164,11 +151,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MBlueBus/MBusViewController.m"
-         timestampString = "375554203.699877"
+         timestampString = "375733359.377125"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "147"
-         endingLineNumber = "147"
+         startingLineNumber = "140"
+         endingLineNumber = "140"
          landmarkName = "-mapView:viewForOverlay:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -177,11 +164,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MBlueBus/MBusViewController.m"
-         timestampString = "375554203.699877"
+         timestampString = "375733359.377125"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "189"
-         endingLineNumber = "189"
+         startingLineNumber = "176"
+         endingLineNumber = "176"
          landmarkName = "-DrawBus"
          landmarkType = "5">
       </FileBreakpoint>
@@ -190,11 +177,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MBlueBus/MBusViewController.m"
-         timestampString = "375554203.699877"
+         timestampString = "375733359.377125"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "192"
-         endingLineNumber = "192"
+         startingLineNumber = "179"
+         endingLineNumber = "179"
          landmarkName = "-DrawBus"
          landmarkType = "5">
       </FileBreakpoint>
@@ -203,11 +190,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MBlueBus/MBusViewController.m"
-         timestampString = "375554203.699877"
+         timestampString = "375733359.377125"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "153"
-         endingLineNumber = "153"
+         startingLineNumber = "146"
+         endingLineNumber = "146"
          landmarkName = "-mapView:viewForOverlay:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -255,11 +242,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MBlueBus/MBusViewController.m"
-         timestampString = "375554203.699877"
+         timestampString = "375733359.377125"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "220"
-         endingLineNumber = "220"
+         startingLineNumber = "200"
+         endingLineNumber = "200"
          landmarkName = "-DrawBus"
          landmarkType = "5">
       </FileBreakpoint>
@@ -268,11 +255,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MBlueBus/MBusViewController.m"
-         timestampString = "375388969.465652"
+         timestampString = "375733359.377125"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "70"
-         endingLineNumber = "70"
+         startingLineNumber = "63"
+         endingLineNumber = "63"
          landmarkName = "-viewDidLoad"
          landmarkType = "5">
       </FileBreakpoint>
@@ -450,11 +437,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MBlueBus/MBusViewController.m"
-         timestampString = "375554203.699877"
+         timestampString = "375733359.377125"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "148"
-         endingLineNumber = "148"
+         startingLineNumber = "141"
+         endingLineNumber = "141"
          landmarkName = "-mapView:viewForOverlay:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -528,11 +515,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MBlueBus/MBusViewController.m"
-         timestampString = "375554206.877482"
+         timestampString = "375733359.377125"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "109"
-         endingLineNumber = "109"
+         startingLineNumber = "102"
+         endingLineNumber = "102"
          landmarkName = "-buttonPressed:"
          landmarkType = "5">
       </FileBreakpoint>

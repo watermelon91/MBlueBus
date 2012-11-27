@@ -75,7 +75,7 @@
             }
             
             if(tempS.busInOperationNum < 1){
-                thisStop.arrivingTime = @"No bus avail";
+                thisStop.arrivingTime = @"--";
             }else{
                 minArrivingTime = minArrivingTime / 60;
                 if(minArrivingTime < 1){

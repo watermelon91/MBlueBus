@@ -17,13 +17,6 @@
 
 @synthesize mapView = _mapView, routeDataSource, locDataSource, stopViewPopover, lineViewPopover, region = _region, span = _span;
 
-// Finish building BusColorInfo
-
-// pins with arriving time of lines
-// line layout
-// push notification (needs Apple Developer license)
-// table views for different lines
-
 - (void)awakeFromNib {
    
     [self SetUp];
@@ -178,12 +171,6 @@
 
 - (void)DrawBus{
     for(BusLocationCoordinateInfo * thisBus in locDataSource.parsedBusLocs){
-        /*
-        CLLocationCoordinate2D location;
-        location.latitude = thisBus.latitude;
-        location.longitude = thisBus.longitude;
-         */
-        
         // heading 0 - clockwise
         CLLocationCoordinate2D busShapeCord[5];
         double height = 0.00035, leg = 0.00025;
@@ -208,13 +195,6 @@
         
         busShapeCord[4].latitude = thisBus.latitude;
         busShapeCord[4].longitude = thisBus.longitude;
-      
-        /*
-        MKCircle * circle = [MKCircle circleWithCenterCoordinate:location radius:50];
-        circle.title = thisBus.routeName;
-        [busesOnMap addObject:circle];
-        [self.mapView addOverlay: circle];
-        */
         
         MKPolygon * poly = [MKPolygon polygonWithCoordinates:busShapeCord count:4];
         poly.title = thisBus.routeName;
