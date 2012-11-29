@@ -140,6 +140,7 @@
             cell.textLabel.textColor = [UIColor redColor];
         }else{
             cell.textLabel.text = [NSString stringWithFormat:@"%@ %@, %1.0f min", [BusAttributeInfo getName:tempSA.routeName], directionLookup[tempSA.direction], (tempSA.arrivingSeconds) / 60];
+            cell.textLabel.textColor = [UIColor blackColor];
         }
     }
     

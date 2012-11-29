@@ -121,6 +121,8 @@
         
         if([tempSA.arrivingTime isEqualToString:@"Arriving"]){
             cell.textLabel.textColor = [UIColor redColor];
+        }else{
+            cell.textLabel.textColor = [UIColor blackColor];
         }
     }
     

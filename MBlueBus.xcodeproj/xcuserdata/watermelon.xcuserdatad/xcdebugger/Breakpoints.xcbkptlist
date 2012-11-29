@@ -281,7 +281,7 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MBlueBus/StopDetailedArrivingInfoContentController.m"
-         timestampString = "374735546.59426"
+         timestampString = "375911996.78874"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "142"
@@ -573,6 +573,19 @@
          startingLineNumber = "51"
          endingLineNumber = "51"
          landmarkName = "-getNotification:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "MBlueBus/StopDetailedArrivingInfoContentController.m"
+         timestampString = "375911924.694938"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "139"
+         endingLineNumber = "139"
+         landmarkName = "-tableView:cellForRowAtIndexPath:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
